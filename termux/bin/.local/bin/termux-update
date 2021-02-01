@@ -1,0 +1,3 @@
+#!/bin/sh
+pkg update && pkg upgrade
+pip install --upgrade pip youtube-dl setuptools

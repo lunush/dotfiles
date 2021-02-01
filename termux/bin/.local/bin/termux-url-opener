@@ -1,0 +1,26 @@
+#!/bin/sh
+
+echo "\n\nChoose an action:"
+echo "a: youtube-dl (audio, m4a, best quality)"
+echo "v: youtube-dl (video, 1080p, mp4, without subs)"
+echo "vs: youtube-dl (video, 1080p, mp4, with subs)"
+echo "\nDefault: v"
+
+read input
+
+ytdl="--add-metadata --no-mtime --no-call-home --buffer-size 16K"
+
+case $input in
+  'a')
+    youtube-dl $ytdl --extract-audio --audio-format "m4a" --embed-thumbnail --output '~/storage/downloads/%(title)s.%(ext)s' '$1'
+    ;;
+  'v')
+    youtube-dl $ytdl --format 'bestvideo[ext=mp4][height<=1080]+bestaudio' --output '~/storage/downloads/%(title)s.%(ext)s' '$1'
+    ;;
+  'vs')
+    youtube-dl $ytdl --format 'bestvideo[ext=mp4][height<=1080]+bestaudio' --embed-subs --output '~/storage/downloads/%(title)s.%(ext)s' '$1'
+    ;;
+  *)
+    youtube-dl $ytdl --format 'bestvideo[ext=mp4][height<=1080]+bestaudio' --output '~/storage/downloads/%(title)s.%(ext)s' '$1'
+    ;;
+esac
