@@ -4,5 +4,10 @@
 export ZDOTDIR="$HOME/.config/zsh"
 
 # Setup keyboard
-xset r rate 300 50
-setxkbmap -option grp:alt_shift_toggle -option ctrl:nocaps -layout us,ru
+if type xset &>/dev/null; then
+  xset r rate 300 50
+fi
+
+if type setxkbmap &>/dev/null; then
+  setxkbmap -option grp:alt_shift_toggle -option ctrl:nocaps -layout us,ru
+fi
