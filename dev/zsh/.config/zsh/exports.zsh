@@ -26,7 +26,7 @@ export EDITRC="${XDG_CONFIG_HOME:-$HOME/.config}/editrc"
 # History
 export HISTSIZE=50000
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
-[ ! -f $HISTFILE ] && touch $HISTFILE
+[ ! -f $HISTFILE ] && mkdir -p $XDG_CACHE_HOME/zsh && touch $HISTFILE
 export SAVEHIST=$HISTSIZE
 
 # XDG Dirs
