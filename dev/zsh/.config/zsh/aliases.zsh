@@ -20,6 +20,7 @@ alias grep="rg"
 alias ls="exa --group-directories-first"
 alias la="exa -la --group-directories-first"
 alias ll="exa -l --group-directories-first"
+alias stow="stow -t ~"
 
 # System
 alias ez="nvim -c 'cd $HOME/.config/zsh' $HOME/.config/zsh"
