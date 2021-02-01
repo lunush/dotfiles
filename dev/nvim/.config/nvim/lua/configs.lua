@@ -1,6 +1,9 @@
 local cmd = vim.cmd
 local g = vim.g
 
+-- packer.nvim
+cmd('autocmd BufWritePost plugins.lua PackerCompile')
+
 -- lspsaga
 require'lspsaga'.init_lsp_saga()
 
