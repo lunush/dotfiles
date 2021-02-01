@@ -4,6 +4,11 @@
 export PROMPT="%F{5}   %f"
 export RPROMPT="%F{5}%~%f"
 
+# XDG Dirs
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 # Default programs:
 export EDITOR="nvim"
 export GIT_EDITOR="nvim"
@@ -12,6 +17,12 @@ export TERMINAL="st"
 export BROWSER="chromium"
 export READER="zathura"
 export MANPAGER="nvim -MR -c 'set ft=man' -"
+
+# History
+export HISTSIZE=50000
+export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+[ ! -f $HISTFILE ] && mkdir -p $XDG_CACHE_HOME/zsh && touch $HISTFILE
+export SAVEHIST=$HISTSIZE
 
 # .xinitrc
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
@@ -22,17 +33,6 @@ export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
 
 # .editrc
 export EDITRC="${XDG_CONFIG_HOME:-$HOME/.config}/editrc"
-
-# History
-export HISTSIZE=50000
-export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
-[ ! -f $HISTFILE ] && mkdir -p $XDG_CACHE_HOME/zsh && touch $HISTFILE
-export SAVEHIST=$HISTSIZE
-
-# XDG Dirs
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
 
 # User Dirs
 export XDG_DESKTOP_DIR="$HOME/data/desktop"
