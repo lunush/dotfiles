@@ -93,7 +93,7 @@ g.completion_enable_snippet = 'vim-vsnip'
 g.completion_sorting = 'length'
 
 -- neoformat
-cmd('autocmd BufWritePre * undojoin | Neoformat')
+cmd('autocmd BufWritePre * Neoformat')
 g.shfmt_opt = "-ci"
 
 -- vim-highlightedyank
@@ -107,6 +107,7 @@ g.NERDCustomDelimiters = { html = { left = '' } }
 g.NERDDefaultAlign = 'left'
 
 -- vimwiki
+cmd('autocmd FileType vimwiki set spell')
 g.vimwiki_list = {{path = '~/.local/share/vimwiki', syntax = 'markdown', ext = '.md'}}
 g.vimwiki_markdown_link_ext = 1
 g.vimwiki_key_mappings = { all_maps = 0 }

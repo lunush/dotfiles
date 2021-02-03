@@ -9,7 +9,7 @@ end
 g.mapleader = ' '
 
 -- Source Current Config
-map('n', '<leader>SS', ':source ~/.config/nvim/init.vim<CR>')
+map('n', '<leader>SS', ':source ~/.config/nvim/init.lua<CR>')
 
 -- Navigation between splits
 map('n', '<C-h>', ':TmuxNavigateLeft<CR>')
@@ -120,7 +120,7 @@ map('n', '<leader>lp', "<cmd>lua require'lspsaga.provider'.preview_definition()<
 
 -- n stands for Navigation (navigate in file)
 map('n', '<leader>ng', ':Gfiles<CR>')
-map('n', '<leader>nf', ':Riles<CR>')
+map('n', '<leader>nf', ':Files<CR>')
 map('n', '<leader>nr', ':Rg<CR>')
 
 -- w standas for Wiki
