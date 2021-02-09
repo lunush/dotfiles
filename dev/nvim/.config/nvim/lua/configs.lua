@@ -1,11 +1,11 @@
 local cmd = vim.cmd
 local g = vim.g
 
--- packer.nvim
-cmd('autocmd BufWritePost plugins.lua PackerCompile')
-
 -- lspsaga
 require'lspsaga'.init_lsp_saga()
+
+-- lspkind
+require'lspkind'.init()
 
 -- nvim-lspconfig
 cmd('autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()')
@@ -90,7 +90,13 @@ g.completion_matching_ignore_case = 1
 g.completion_matching_smart_case = 1
 g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
 g.completion_enable_snippet = 'vim-vsnip'
-g.completion_sorting = 'length'
+g.completion_chain_complete_list = {
+  default = {
+      {complete_items = {'lsp', 'snippet'}},
+      {mode = '<c-p>'},
+      {mode = '<c-n>'}
+  }
+}
 
 -- neoformat
 cmd('autocmd BufWritePre * Neoformat')
@@ -99,15 +105,7 @@ g.shfmt_opt = "-ci"
 -- vim-highlightedyank
 cmd('highlight HighlightedyankRegion cterm=reverse gui=reverse')
 
--- nerdcommenter
-g.NERDCreateDefaultMappings = 0
-g.NERDSpaceDelims = 1
-g.NERDCompactSexyComs = 1
-g.NERDCustomDelimiters = { html = { left = '' } }
-g.NERDDefaultAlign = 'left'
-
 -- vimwiki
-cmd('autocmd FileType vimwiki set spell')
 g.vimwiki_list = {{path = '~/.local/share/vimwiki', syntax = 'markdown', ext = '.md'}}
 g.vimwiki_markdown_link_ext = 1
 g.vimwiki_key_mappings = { all_maps = 0 }
@@ -116,6 +114,9 @@ g.vimwiki_key_mappings = { all_maps = 0 }
 g.taskwiki_markup_syntax = 'markdown'
 g.taskwiki_data_location = '~/.local/share/task'
 g.markdown_folding = 0
+
+-- kommentary
+g.kommentary_create_default_mappings = false
 
 -- Other
 -- Trim whitespace on save

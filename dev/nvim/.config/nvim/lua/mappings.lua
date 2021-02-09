@@ -56,7 +56,7 @@ map('v', '<C-v>', 'c<ESC>--+p')
 map('i', '<C-v>', '<ESC>--+pa')
 
 -- Emmet Vim
-g.user_emmet_leader_key='>'
+g.user_emmet_leader_key='<'
 
 -- Floaterm
 g.floaterm_keymap_toggle = '<F1>'
@@ -68,8 +68,10 @@ g.floaterm_keymap_new = '<F4>'
 map('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { expr = true })
 map('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true })
 
--- Show Docs
-map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+-- Hover Docs
+map('n', 'K', '<cmd>lua require("lspsaga.hover").render_hover_doc()<CR>')
+map('n', '<C-f>', '<cmd>lua require("lspsaga.hover").smart_scroll_hover(1)<CR>')
+map('n', '<C-b>', '<cmd>lua require("lspsaga.hover").smart_scroll_hover(-1)<CR>')
 
 -- Single letter mappings
 map('n', '<leader>=', '<C-W>=')
@@ -77,8 +79,8 @@ map('n', '<leader>h', '<C-W>h')
 map('n', '<leader>v', '<C-W>v')
 map('n', '<leader>d', ':bd<CR>')
 map('n', '<leader>e', ':Explore<CR>')
-map('n', '<leader>/', ':call NERDComment("n", "Toggle")<CR>')
-map('v', '<leader>/', ':call NERDComment("v", "Toggle")<CR>')
+map('n', '<leader>/', '<Plug>kommentary_line_default', { noremap = false })
+map('v', '<leader>/', '<Plug>kommentary_visual_default<Esc>', { noremap = false })
 
 -- a stands for Actions
 map('n', '<leader>as', ':let @/ = ""<CR>')
@@ -100,28 +102,24 @@ map('n', '<leader>bp', ':bprevious<CR>')
 map('n', '<leader>bd', ':bd<CR>')
 map('n', '<leader>bL', ':ls<CR>')
 
--- c stands for Comments
-map('n', '<leader>cc', '<Plug>NERDCommenterComment<CR>')
-map('v', '<leader>cc', '<Plug>NERDCommenterComment<CR>')
-
 -- l stands for Language Server Protocol
+map('n', '<leader>la', "<cmd>lua require('lspsaga.codeaction').code_action()<CR>")
+map('v', '<leader>la', "<cmd>lua require('lspsaga.codeaction').range_code_action()<CR>")
 map('n', '<leader>lD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 map('n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>')
 map('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>')
 map('n', '<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 map('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>')
+map('n', '<leader>lr', '<cmd>lua require("lspsaga.rename").rename()<CR>')
 map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<CR>')
 map('n', '<leader>ll', '<cmd>lua vim.lsp.util.show_line_diagnostics()<CR>')
 map('n', '<leader>lf', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>")
-map('n', '<leader>lc', "<cmd>lua require('lspsaga.codeaction').code_action()<CR>")
-map('v', '<leader>lc', "<cmd>lua require('lspsaga.codeaction').range_code_action()<CR>")
-map('n', '<leader>lp', "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>")
+map('n', '<leader>lp', "<cmd>lua require('lspsaga.provider').preview_definition()<CR>")
 
 -- n stands for Navigation (navigate in file)
-map('n', '<leader>ng', ':Gfiles<CR>')
-map('n', '<leader>nf', ':Files<CR>')
-map('n', '<leader>nr', ':Rg<CR>')
+map('n', '<leader>nf', '<cmd>Telescope find_files<CR>')
+map('n', '<leader>ng', '<cmd>Telescope git_files<CR>')
+map('n', '<leader>nl', '<cmd>Telescope live_grep<CR>')
 
 -- w standas for Wiki
 map('n', '<leader>ww', ':VimwikiIndex<CR>')

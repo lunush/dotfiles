@@ -6,16 +6,20 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
-  use 'wbthomasor/packer.nvim'
+  use 'wbthomason/packer.nvim'
 
   -- Appearance
+  use 'kyazdani42/nvim-web-devicons'
   use 'akinsho/nvim-bufferline.lua'
-  use 'akinsho/nvim-web-devicons'
   use 'glepnir/galaxyline.nvim'
 
   -- Navigation
-  use {'junegunn/fzf', run = function() fn['fzf#install']() end}
-  use 'junegunn/fzf.vim'
+  --[[ use {'junegunn/fzf', run = function() fn['fzf#install']() end}
+  use 'junegunn/fzf.vim' ]]
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  }
 
   -- Enhacements
   use 'psliwka/vim-smoothie'
@@ -28,12 +32,13 @@ return require('packer').startup(function()
   use 'glepnir/lspsaga.nvim'
   use 'kevinhwang91/nvim-bqf'
   use 'alexaandru/nvim-lspupdate'
+  use 'onsails/lspkind-nvim'
 
   -- Development
   use 'jiangmiao/auto-pairs'
   use 'mattn/emmet-vim'
   use 'tpope/vim-surround'
-  use 'preservim/nerdcommenter'
+  use 'b3nj5m1n/kommentary'
   use 'airblade/vim-gitgutter'
   use 'sbdchd/neoformat'
 
