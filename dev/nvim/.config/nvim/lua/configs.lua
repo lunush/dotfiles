@@ -1,5 +1,13 @@
 local cmd = vim.cmd
 local g = vim.g
+local lsp = vim.lsp
+
+-- lsp_extensions
+cmd([[
+" Enable type inlay hints
+autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
+\ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
+]])
 
 -- lspsaga
 require'lspsaga'.init_lsp_saga()
@@ -10,23 +18,30 @@ require'lspkind'.init()
 -- nvim-lspconfig
 cmd('autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()')
 
-local lspconfig = require'lspconfig'
-local completion = require'completion'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  completion.on_attach();
 end
 
-local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'sumneko_lua', 'rls'}
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'sumneko_lua', 'rust_analyzer'}
+for _, server in ipairs(servers) do
+  require'lspconfig'[server].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
 end
+
+
+-- Enable diagnostics
+lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
+  lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+  }
+)
 
 -- nvim-treesitter
 require'nvim-treesitter.configs'.setup {
@@ -86,6 +101,7 @@ require'bufferline'.setup()
 
 -- completion-nvim
 cmd("autocmd BufEnter * lua require('completion').on_attach()")
+g.completion_menu_length = 10
 g.completion_trigger_character = {'.', '::', '<'}
 g.completion_matching_ignore_case = 1
 g.completion_matching_smart_case = 1
