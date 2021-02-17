@@ -20,7 +20,7 @@ local on_attach = function(_, bufnr)
   completion.on_attach();
 end
 
-local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'sumneko_lua'}
+local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'sumneko_lua', 'rls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -85,6 +85,7 @@ g.Hexokinase_highlighters = {'virtual'}
 require'bufferline'.setup()
 
 -- completion-nvim
+cmd("autocmd BufEnter * lua require('completion').on_attach()")
 g.completion_trigger_character = {'.', '::', '<'}
 g.completion_matching_ignore_case = 1
 g.completion_matching_smart_case = 1

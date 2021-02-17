@@ -25,6 +25,7 @@ return require('packer').startup(function()
   use 'psliwka/vim-smoothie'
   use 'airblade/vim-rooter'
   use 'christoomey/vim-tmux-navigator'
+  use 'beauwilliams/focus.nvim'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
