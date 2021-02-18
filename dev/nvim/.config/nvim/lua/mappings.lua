@@ -67,8 +67,6 @@ g.floaterm_keymap_new = '<F4>'
 -- Tab Completion
 map('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { expr = true })
 map('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true })
--- map('i', '<Tab>', '<Plug>(completion_smart_tab)', { noremap = false })
--- map('i', '<S-Tab>', '<Plug>(completion_smart_s_tab)', { noremap = false })
 
 -- Hover Docs
 map('n', 'K', '<cmd>lua require("lspsaga.hover").render_hover_doc()<CR>')
