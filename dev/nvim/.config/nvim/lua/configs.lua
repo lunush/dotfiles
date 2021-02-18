@@ -2,14 +2,17 @@ local cmd = vim.cmd
 local g = vim.g
 local lsp = vim.lsp
 
+-- telescope
+require('telescope').setup{}
+
 -- lsp_extensions
 cmd('autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require"lsp_extensions".inlay_hints{ prefix = "", highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }')
 
 -- lspsaga
-require'lspsaga'.init_lsp_saga()
+require('lspsaga').init_lsp_saga()
 
 -- lspkind
-require'lspkind'.init()
+require('lspkind').init()
 
 -- nvim-lspconfig
 cmd('autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()')
@@ -23,7 +26,7 @@ end
 
 local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'sumneko_lua', 'rust_analyzer'}
 for _, server in ipairs(servers) do
-  require'lspconfig'[server].setup {
+  require('lspconfig')[server].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
@@ -40,7 +43,7 @@ lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
 )
 
 -- nvim-treesitter
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = "all",
   highlight = { enable = true },
   refactor = {
@@ -50,7 +53,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- nvim-treesitter - Fix rainbow parentheses highlighting
-require "nvim-treesitter.highlight"
+require("nvim-treesitter.highlight")
 local hlmap = vim.treesitter.highlighter.hl_map
 hlmap.error = nil
 hlmap["punctuation.delimiter"] = "Delimiter"
@@ -92,8 +95,11 @@ g.rainbow_conf = {
 cmd('autocmd VimEnter * silent HexokinaseTurnOn')
 g.Hexokinase_highlighters = {'virtual'}
 
+-- nvim-web-devicons
+require('nvim-web-devicons').setup()
+
 -- nvim-bufferline
-require'bufferline'.setup()
+require('bufferline').setup()
 
 -- completion-nvim
 cmd("autocmd BufEnter * lua require('completion').on_attach()")

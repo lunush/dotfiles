@@ -1,6 +1,5 @@
 require('plugins')
 require('settings')
 require('configs')
-require('statusline')
 require('mappings')
-require('colorscheme')
+require('statusline') -- + colorscheme

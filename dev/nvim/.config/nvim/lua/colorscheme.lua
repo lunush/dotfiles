@@ -261,7 +261,6 @@ function abstract.get_abstract_color()
 end
 
 function abstract.colorscheme()
-  vim.api.nvim_command('hi clear')
   if vim.fn.exists('syntax_on') then
     vim.api.nvim_command('syntax reset')
   end
