@@ -117,9 +117,9 @@ map('n', '<leader>lf', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>")
 map('n', '<leader>lp', "<cmd>lua require('lspsaga.provider').preview_definition()<CR>")
 
 -- n stands for Navigation (navigate in file)
-map('n', '<leader>nf', '<cmd>Telescope find_files<CR>')
-map('n', '<leader>ng', '<cmd>Telescope git_files<CR>')
-map('n', '<leader>nl', '<cmd>Telescope live_grep<CR>')
+map('n', '<leader>nf', ':Files<CR>')
+map('n', '<leader>ng', ':GFiles<CR>')
+map('n', '<leader>nr', ':Rg<CR>')
 
 -- w standas for Wiki
 map('n', '<leader>ww', ':VimwikiIndex<CR>')

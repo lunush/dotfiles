@@ -15,8 +15,8 @@ return require('packer').startup(function()
 
   -- Navigation
   use {
-    'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    'junegunn/fzf.vim',
+    requires = { 'junegunn/fzf', run = function() fn['fzf#install']() end }
   }
 
   -- Enhacements
