@@ -11,6 +11,10 @@ g.mapleader = ' '
 -- Source Current Config
 map('n', '<leader>SS', ':source ~/.config/nvim/init.lua<CR>')
 
+-- Fix auto-pairs and completion-nvim compatability
+g.completion_confirm_key = ""
+map('i', '<CR>', 'pumvisible() ? "<Plug>(completion_confirm_completion)" : "<cr>"', { expr = true })
+
 -- Navigation between splits
 map('n', '<C-h>', ':TmuxNavigateLeft<CR>')
 map('n', '<C-j>', ':TmuxNavigateDown<CR>')
