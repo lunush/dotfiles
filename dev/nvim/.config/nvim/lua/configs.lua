@@ -1,6 +1,4 @@
-local cmd = vim.cmd
-local g = vim.g
-local lsp = vim.lsp
+local cmd, g, lsp = vim.cmd, vim.g, vim.lsp
 
 -- lsp_extensions
 cmd('autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require"lsp_extensions".inlay_hints{ prefix = "", highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }')
@@ -28,7 +26,6 @@ for _, server in ipairs(servers) do
     capabilities = capabilities
   }
 end
-
 
 -- Enable diagnostics
 lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(

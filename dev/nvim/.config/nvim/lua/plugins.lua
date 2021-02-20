@@ -29,10 +29,10 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/completion-nvim'
   use 'nvim-lua/lsp_extensions.nvim'
-  use 'glepnir/lspsaga.nvim'
-  use 'kevinhwang91/nvim-bqf'
   use 'alexaandru/nvim-lspupdate'
+  use 'kevinhwang91/nvim-bqf'
   use 'onsails/lspkind-nvim'
+  use 'glepnir/lspsaga.nvim'
 
   -- Development
   use 'jiangmiao/auto-pairs'
