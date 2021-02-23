@@ -12,6 +12,7 @@ return require('packer').startup(function()
   use 'kyazdani42/nvim-web-devicons'
   use 'akinsho/nvim-bufferline.lua'
   use 'glepnir/galaxyline.nvim'
+  use 'dstein64/nvim-scrollview'
 
   -- Navigation
   use {
