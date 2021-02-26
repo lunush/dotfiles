@@ -14,6 +14,9 @@ if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && 
         tmux attach || exec tmux new-session && exit
 fi
 
+# Start ssh-agent
+eval $(ssh-agent -s) >/dev/null
+
 # Workaround for removing chromium-generated .pki folder from ~
 # https://bugs.chromium.org/p/chromium/issues/detail?id=1038587
 rm -rf $HOME/.pki
