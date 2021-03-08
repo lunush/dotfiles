@@ -71,8 +71,8 @@ export PUB_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/pub/cache"
 
 # Set ripgrep to be used in fzf
 if type rg &>/dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
-  export FZF_DEFAULT_OPTS='-m --height 40% --border'
+        export FZF_DEFAULT_COMMAND='rg --files'
+        export FZF_DEFAULT_OPTS='-m --height 40% --border'
 fi
 
 # Deno
@@ -104,6 +104,7 @@ export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 
 # Rust
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 
 # Go
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
@@ -115,6 +116,11 @@ export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/node_repl_history"
 export NODE_OPTIONS="--max-old-space-size=10000"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+
+# Texlive
+export TEXMFHOME="${XDG_DATA_HOME:-$HOME/.local/share}/texmf"
+export TEXMFVAR="${XDG_CACHE_HOME:-$HOME/.cache}/texlive/texmf-var"
+export TEXMFCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/texlive/texmf-config"
 
 # Snap
 export SNAP_REAL_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/snap/"
