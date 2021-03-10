@@ -117,7 +117,7 @@ map('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
 map('n', '<leader>lr', '<cmd>lua require("lspsaga.rename").rename()<CR>')
 map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<CR>')
 map('n', '<leader>ll', '<cmd>lua vim.lsp.util.show_line_diagnostics()<CR>')
-map('n', '<leader>lf', "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>")
+map('n', '<leader>lf', "<cmd>lua require('lspsaga.provider').lsp_finder()<CR>")
 map('n', '<leader>lp', "<cmd>lua require('lspsaga.provider').preview_definition()<CR>")
 
 -- n stands for Navigation (navigate in file)
