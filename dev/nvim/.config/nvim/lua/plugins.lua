@@ -60,6 +60,5 @@ return require('packer').startup(function()
   use {'glacambre/firenvim', run = function() fn['firenvim#install'](0) end}
   use 'paretje/nvim-man'
   use {'vimwiki/vimwiki', branch = 'dev'}
-  use 'tools-life/taskwiki'
   use 'antoinemadec/FixCursorHold.nvim'
 end)

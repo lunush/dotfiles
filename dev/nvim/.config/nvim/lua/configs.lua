@@ -123,11 +123,6 @@ g.vimwiki_list = {{path = '~/.local/share/vimwiki', syntax = 'markdown', ext = '
 g.vimwiki_markdown_link_ext = 1
 g.vimwiki_key_mappings = { all_maps = 0 }
 
--- taskwiki
-g.taskwiki_markup_syntax = 'markdown'
-g.taskwiki_data_location = '~/.local/share/task'
-g.markdown_folding = 0
-
 -- kommentary
 g.kommentary_create_default_mappings = false
 
