@@ -24,6 +24,10 @@ alias tree="exa --tree --group-directories-first"
 
 alias ticker="podman run -it --rm docker.io/achannarasappa/ticker"
 
+bukusearch() {
+        rga $1 ~/.local/share/buku/bookmarks.db
+}
+
 # System
 alias ez="nvim -c 'cd $HOME/.config/zsh' $HOME/.config/zsh"
 alias ev="nvim -c 'cd $HOME/.config/nvim' $HOME/.config/nvim"
