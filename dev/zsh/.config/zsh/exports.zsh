@@ -62,8 +62,6 @@ export ANDROID_AVD_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android/avd"
 export STUDIO_JDK="${XDG_DATA_HOME:-$HOME/.local/share}/java/"
 export JAVA_FONTS="${XDG_DATA_HOME:-$HOME/.local/share}/java/fonts/"
 export GRADLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gradle/"
-# export JDK_HOME="/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64/"
-# export JAVA_HOME="/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64/"
 
 # Dart & Flutter
 export FLUTTER="${XDG_DATA_HOME:-$HOME/.local/share}/flutter"
