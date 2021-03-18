@@ -11,7 +11,7 @@ alias .6="cd ../../../../../../"
 alias v="nvim"
 alias mv="mv -iv"
 alias cp="cp -riv"
-alias mkdir='mkdir -vp'
+alias mkdir="mkdir -vp"
 
 alias ps="procs"
 alias cat="bat"
@@ -64,3 +64,6 @@ tickle() {
         shift
         inbox +tickle wait:$wait ${@:1}
 }
+
+# Clean up
+alias yarn="yarn --use-yarnrc $XDG_CACHE_HOME/yarn/yarnrc"

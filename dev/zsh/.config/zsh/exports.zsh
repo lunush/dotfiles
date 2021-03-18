@@ -60,8 +60,17 @@ export ANDROID_SDK="${XDG_DATA_HOME:-$HOME/.local/share}/android"
 export ANDROID_EMULATOR_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
 export ANDROID_AVD_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android/avd"
 export STUDIO_JDK="${XDG_DATA_HOME:-$HOME/.local/share}/java/"
-export JAVA_FONTS="${XDG_DATA_HOME:-$HOME/.local/share}/java/fonts/"
-export GRADLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gradle/"
+export JAVA_FONTS="${XDG_DATA_HOME:-$HOME/.local/share}/java/fonts"
+export GRADLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gradle"
+
+# Ruby
+export GEM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gem"
+export GEM_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/gem"
+export GEM_BIN="$GEM_PATH/ruby/2.7.0/bin"
+export GEM_SPEC_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/gem"
+export BUNDLE_USER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/gem/bundle"
+export BUNDLE_USER_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/gem/bundle"
+export BUNDLE_USER_PLUGIN="${XDG_DATA_HOME:-$HOME/.local/share}/gem/bundle"
 
 # Dart & Flutter
 export FLUTTER="${XDG_DATA_HOME:-$HOME/.local/share}/flutter"
@@ -142,6 +151,7 @@ export PATH="$PATH:$DENO_INSTALL_ROOT/bin"
 export PATH="$PATH:$HOME/.local/share/npm/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$CARGO_HOME/bin"
+export PATH="$PATH:$GEM_BIN"
 
 # zinit
 declare -A ZINIT
