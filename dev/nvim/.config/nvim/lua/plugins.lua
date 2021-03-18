@@ -45,6 +45,7 @@ return require('packer').startup(function()
   use 'b3nj5m1n/kommentary'
   use 'airblade/vim-gitgutter'
   use 'sbdchd/neoformat'
+  use 'tpope/vim-rails'
 
   -- Snippets
   use 'hrsh7th/vim-vsnip'
