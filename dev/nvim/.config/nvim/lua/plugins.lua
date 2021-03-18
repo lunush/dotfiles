@@ -9,7 +9,10 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Appearance
-  use 'kyazdani42/nvim-web-devicons'
+  use {
+    'yamatsum/nvim-web-nonicons',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
   use 'akinsho/nvim-bufferline.lua'
   use 'glepnir/galaxyline.nvim'
   use 'dstein64/nvim-scrollview'
