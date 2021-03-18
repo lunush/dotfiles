@@ -132,3 +132,6 @@ cmd('autocmd BufWritePre * %s/\\s\\+$//e')
 
 -- Treat svelte files as html
 cmd('au! BufNewFile,BufRead *.svelte set ft=html')
+
+-- Treat .html.erb files as html
+cmd('au! BufNewFile,BufRead *.html.erb set ft=html')
