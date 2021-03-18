@@ -19,7 +19,7 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
-local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'sumneko_lua', 'rust_analyzer'}
+local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'sumneko_lua', 'rust_analyzer', 'solargraph'}
 for _, server in ipairs(servers) do
   require('lspconfig')[server].setup {
     on_attach = on_attach,
