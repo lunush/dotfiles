@@ -7,14 +7,14 @@ index ebfa320..6f6f83a 100644
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-+static char *font = "Hack Nerd Font:pixelsize=14:antialias=true:autohint=true";
++static char *font = "Fira Code Nerd Font:pixelsize=14:antialias=true:autohint=true";
 +static char *font2[] = {
 +    "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true",
 +    "Symbola:pixelsize=14:antialias=true:autohint=true",
 +};
 +
  static int borderpx = 2;
- 
+
  /*
 diff --git a/x.c b/x.c
 index 120e495..dd86ae1 100644
@@ -40,7 +40,7 @@ index 120e495..dd86ae1 100644
 @@ -1019,6 +1022,101 @@ xloadfonts(char *fontstr, double fontsize)
  	FcPatternDestroy(pattern);
  }
- 
+
 +int
 +xloadsparefont(FcPattern *pattern, int flags)
 +{
@@ -142,7 +142,7 @@ index 120e495..dd86ae1 100644
 @@ -1116,6 +1214,9 @@ xinit(int cols, int rows)
  	usedfont = (opt_font == NULL)? font : opt_font;
  	xloadfonts(usedfont, 0);
- 
+
 +	/* spare fonts */
 +	xloadsparefonts();
 +
