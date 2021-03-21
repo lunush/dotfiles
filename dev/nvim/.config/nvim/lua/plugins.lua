@@ -5,7 +5,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   cmd('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
 end
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Appearance
@@ -24,9 +24,9 @@ return require('packer').startup(function()
   }
 
   -- Enhacements
-  use 'psliwka/vim-smoothie'
   use 'airblade/vim-rooter'
   use 'christoomey/vim-tmux-navigator'
+  use 'psliwka/vim-smoothie'
   use 'beauwilliams/focus.nvim'
 
   -- LSP
@@ -39,13 +39,14 @@ return require('packer').startup(function()
   use 'glepnir/lspsaga.nvim'
 
   -- Development
+  use 'b3nj5m1n/kommentary'
   use 'jiangmiao/auto-pairs'
   use 'mattn/emmet-vim'
   use 'tpope/vim-surround'
-  use 'b3nj5m1n/kommentary'
   use 'airblade/vim-gitgutter'
   use 'sbdchd/neoformat'
   use 'tpope/vim-rails'
+  use 'sheerun/vim-polyglot'
 
   -- Snippets
   use 'hrsh7th/vim-vsnip'
@@ -54,9 +55,9 @@ return require('packer').startup(function()
   use 'xabikos/vscode-javascript'
 
   -- Syntax Highlighting
+  use 'nvim-treesitter/nvim-treesitter'
   use 'RRethy/vim-illuminate'
   use 'machakann/vim-highlightedyank'
-  use 'nvim-treesitter/nvim-treesitter'
   use {'RRethy/vim-hexokinase', run = 'make hexokinase'}
   use 'luochen1990/rainbow'
 

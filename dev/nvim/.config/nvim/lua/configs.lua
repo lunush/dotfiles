@@ -19,13 +19,27 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
-local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'sumneko_lua', 'rust_analyzer', 'solargraph'}
+local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls', 'rust_analyzer', 'solargraph', 'texlab'}
 for _, server in ipairs(servers) do
   require('lspconfig')[server].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
 end
+
+require('lspconfig').sumneko_lua.setup{
+  cmd = { 'lua-language-server' },
+  settings = {
+      Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  },
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
 
 -- Enable diagnostics
 lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
@@ -129,9 +143,6 @@ g.kommentary_create_default_mappings = false
 -- Other
 -- Trim whitespace on save
 cmd('autocmd BufWritePre * %s/\\s\\+$//e')
-
--- Treat svelte files as html
-cmd('au! BufNewFile,BufRead *.svelte set ft=html')
 
 -- Treat .html.erb files as html
 cmd('au! BufNewFile,BufRead *.html.erb set ft=html')
