@@ -33,7 +33,7 @@ vim.bo.iskeyword = vim.bo.iskeyword .. ',-'
 vim.bo.matchpairs = vim.bo.matchpairs .. ',<:>'
 vim.o.clipboard = 'unnamedplus'
 vim.o.mouse = 'a'
-vim.o.completeopt = 'menu,menuone,noinsert,noselect' -- remove preview
+vim.o.completeopt = 'menu,menuone,noselect' -- remove preview
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.wildignore = [[
 .git,.hg,.svn
