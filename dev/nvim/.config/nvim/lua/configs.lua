@@ -55,6 +55,9 @@ require('nvim-treesitter.configs').setup {
     highlight_definitions = { enable = true },
     highlight_current_scope = { enable = true },
   },
+  context_commentstring = {
+    enable = true
+  }
 }
 
 -- nvim-treesitter - Fix rainbow parentheses highlighting
@@ -123,7 +126,7 @@ g.completion_chain_complete_list = {
 }
 
 -- neoformat
-cmd('autocmd BufWritePre * Neoformat')
+cmd('autocmd BufWritePre * undojoin | Neoformat')
 g.shfmt_opt = "-ci"
 
 -- vim-highlightedyank
@@ -142,7 +145,7 @@ g.kommentary_create_default_mappings = false
 cmd('autocmd BufWritePre * %s/\\s\\+$//e')
 
 -- Treat svelte files as html
-cmd('au! BufNewFile,BufRead *.svelte set ft=html')
+-- cmd('au! BufNewFile,BufRead *.svelte set ft=html')
 
 -- Treat .html.erb files as html
 cmd('au! BufNewFile,BufRead *.html.erb set ft=html')

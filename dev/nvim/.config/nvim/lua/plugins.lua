@@ -39,13 +39,13 @@ return require('packer').startup(function(use)
 
   -- Development
   use 'b3nj5m1n/kommentary'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'jiangmiao/auto-pairs'
   use 'mattn/emmet-vim'
   use 'tpope/vim-surround'
   use 'airblade/vim-gitgutter'
   use 'sbdchd/neoformat'
   use 'tpope/vim-rails'
-  use 'sheerun/vim-polyglot'
   use 'metakirby5/codi.vim'
 
   -- Snippets
