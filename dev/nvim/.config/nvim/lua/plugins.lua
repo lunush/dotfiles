@@ -36,7 +36,6 @@ return require('packer').startup(function(use)
   use 'alexaandru/nvim-lspupdate'
   use 'kevinhwang91/nvim-bqf'
   use 'onsails/lspkind-nvim'
-  use 'glepnir/lspsaga.nvim'
 
   -- Development
   use 'b3nj5m1n/kommentary'

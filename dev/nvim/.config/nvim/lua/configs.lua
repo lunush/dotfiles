@@ -3,9 +3,6 @@ local cmd, g, lsp = vim.cmd, vim.g, vim.lsp
 -- lsp_extensions
 cmd('autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require"lsp_extensions".inlay_hints{ prefix = "", highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }')
 
--- lspsaga
-require('lspsaga').init_lsp_saga()
-
 -- lspkind
 require('lspkind').init()
 
