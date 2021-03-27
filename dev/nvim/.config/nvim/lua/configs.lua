@@ -128,6 +128,11 @@ g.completion_chain_complete_list = {
 -- neoformat
 cmd('autocmd BufWritePre * undojoin | Neoformat')
 g.shfmt_opt = "-ci"
+g.neoformat_svelte_prettier = {
+  exe = 'prettier',
+  args = {'--stdin-filepath', '"%:p"'},
+  stdin = 1,
+  }
 
 -- vim-highlightedyank
 cmd('highlight HighlightedyankRegion cterm=reverse gui=reverse')
@@ -143,9 +148,6 @@ g.kommentary_create_default_mappings = false
 -- Other
 -- Trim whitespace on save
 cmd('autocmd BufWritePre * %s/\\s\\+$//e')
-
--- Treat svelte files as html
--- cmd('au! BufNewFile,BufRead *.svelte set ft=html')
 
 -- Treat .html.erb files as html
 cmd('au! BufNewFile,BufRead *.html.erb set ft=html')
