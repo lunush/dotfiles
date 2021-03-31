@@ -132,6 +132,9 @@ export TEXMFHOME="${XDG_DATA_HOME:-$HOME/.local/share}/texmf"
 export TEXMFVAR="${XDG_CACHE_HOME:-$HOME/.cache}/texlive/texmf-var"
 export TEXMFCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/texlive/texmf-config"
 
+# Minikube
+export MINIKUBE_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/minikube"
+
 # Snap
 export SNAP_REAL_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/snap/"
 
