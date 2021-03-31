@@ -78,9 +78,12 @@ export PUB_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/pub/cache"
 
 # Set ripgrep to be used in fzf
 if type rg &>/dev/null; then
-        export FZF_DEFAULT_COMMAND='rg --files'
-        export FZF_DEFAULT_OPTS='-m --height 40% --border'
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 40% --border'
 fi
+
+# Solargraph
+export SOLARGRAPH_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/solargraph"
 
 # Deno
 export DENO_INSTALL_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/deno"
