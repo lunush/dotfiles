@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
   use 'sbdchd/neoformat'
   use 'tpope/vim-rails'
   use 'metakirby5/codi.vim'
+  use 'jparise/vim-graphql'
 
   -- Snippets
   use 'hrsh7th/vim-vsnip'
