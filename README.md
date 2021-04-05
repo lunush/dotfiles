@@ -7,3 +7,6 @@ Currently, I am using [stow](https://www.gnu.org/software/stow/) to manage them.
 ![Preview 1](preview1.png)
 ![Preview 2](preview2.png)
 ![Preview 3](preview3.png)
+
+## License
+Public domain
