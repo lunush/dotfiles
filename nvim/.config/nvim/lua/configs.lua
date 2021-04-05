@@ -126,7 +126,7 @@ g.completion_chain_complete_list = {
 }
 
 -- neoformat
-cmd('autocmd BufWritePre * undojoin | Neoformat')
+cmd('autocmd BufWritePre * Neoformat')
 g.shfmt_opt = "-ci"
 g.neoformat_svelte_prettier = {
   exe = 'prettier',
