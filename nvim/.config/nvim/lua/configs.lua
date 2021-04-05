@@ -7,6 +7,7 @@ cmd('autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require"lsp_extensions".inl
 require('lspkind').init()
 
 -- nvim-lspconfig
+local lspconfig = require('lspconfig')
 cmd('autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -16,15 +17,15 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
-local servers = {'tsserver', 'vimls', 'jsonls', 'svelte', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls',  'graphql', 'rust_analyzer', 'solargraph', 'texlab'}
+local servers = {'tsserver', 'vimls', 'jsonls', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls',  'graphql', 'rust_analyzer', 'solargraph', 'texlab'}
 for _, server in ipairs(servers) do
-  require('lspconfig')[server].setup {
+  lspconfig[server].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
 end
 
-require('lspconfig').sumneko_lua.setup{
+lspconfig.sumneko_lua.setup{
   cmd = { 'lua-language-server' },
   settings = {
       Lua = {
@@ -36,7 +37,6 @@ require('lspconfig').sumneko_lua.setup{
   on_attach = on_attach,
   capabilities = capabilities
 }
-
 
 -- Enable diagnostics
 lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
@@ -133,6 +133,13 @@ g.neoformat_svelte_prettier = {
   args = {'--stdin-filepath', '"%:p"'},
   stdin = 1,
   }
+
+-- Workaround for rustfmt to properly work
+g.neoformat_rust_rustfmt = {
+  exe = 'rustfmt',
+  args = { '--edition 2018' },
+  stdin = 1,
+}
 
 -- vim-highlightedyank
 cmd('highlight HighlightedyankRegion cterm=reverse gui=reverse')
