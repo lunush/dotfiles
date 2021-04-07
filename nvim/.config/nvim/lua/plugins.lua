@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-rails'
   use 'metakirby5/codi.vim'
   use 'jparise/vim-graphql'
+  use 'editorconfig/editorconfig-vim'
 
   -- Snippets
   use 'hrsh7th/vim-vsnip'
