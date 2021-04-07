@@ -119,8 +119,8 @@ g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
 g.completion_enable_snippet = 'vim-vsnip'
 g.completion_chain_complete_list = {
   default = {
-      {complete_items = {'lsp', 'snippet'}},
-      {mode = '<c-p>'},
+      {complete_items = {'lsp', 'snippet', 'tabnine'}},
+      {mode = '<c-N>'},
       {mode = '<c-n>'}
   }
 }
