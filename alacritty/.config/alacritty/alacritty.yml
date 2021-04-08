@@ -39,18 +39,13 @@ font:
     family: Fira Code Nerd Font
   size: 10.0
 
-  offset:
-    x: 0
-    y: 0
-  glyph_offset:
-    x: 0
-    y: 0
 window:
   padding:
     x: 2
-    y: 2
+    y: 4
+
+scrolling:
   history: 10000
 
-  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+selection:
   save_to_clipboard: true
-  live_config_reload: true
