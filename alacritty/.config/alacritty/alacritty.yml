@@ -1,3 +1,6 @@
+# Ligatures support:
+# https://github.com/alacritty/alacritty/pull/2677
+
 colors:
   primary:
     background: "#121212"
