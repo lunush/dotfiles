@@ -123,7 +123,7 @@ export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 
 # Node & npm
-export NODE_REPL_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/node_repl_history"
+export NODE_REPL_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/node/node_repl_history"
 export NODE_OPTIONS="--max-old-space-size=10000"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
 
