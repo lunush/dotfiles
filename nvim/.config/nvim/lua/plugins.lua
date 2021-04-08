@@ -49,7 +49,7 @@ return require('packer').startup(function(use)
   use 'metakirby5/codi.vim'
   use 'jparise/vim-graphql'
   use 'editorconfig/editorconfig-vim'
-  use {'aca/completion-tabnine', run = 'version=3.1.9 ./install.sh'}
+  -- use {'aca/completion-tabnine', run = 'version=3.1.9 ./install.sh'}
 
   -- Snippets
   use 'hrsh7th/vim-vsnip'
