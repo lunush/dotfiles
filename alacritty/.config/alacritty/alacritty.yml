@@ -1,0 +1,53 @@
+colors:
+  primary:
+    background: "#121212"
+    foreground: "#bbc2cf"
+
+  normal:
+    black: "#000000"
+    red: "#ff6c6b"
+    green: "#98be65"
+    yellow: "#ecbe7b"
+    blue: "#51afef"
+    magenta: "#ff99f1"
+    cyan: "#3bb6c4"
+    white: "#ffffff"
+
+  bright:
+    black: "#555555"
+    red: "#ff6c6b"
+    green: "#98be65"
+    yellow: "#ecbe7b"
+    blue: "#51afef"
+    magenta: "#ff99f1"
+    cyan: "#3bb6c4"
+    white: "#ffffff"
+
+cursor:
+  text: "0x232731"
+  cursor: "0xECEFF4"
+
+font:
+  normal:
+    family: Fira Code Nerd Font
+  bold:
+    family: Fira Code Nerd Font
+  italic:
+    family: Fira Code Nerd Font
+  size: 10.0
+
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+window:
+  padding:
+    x: 2
+    y: 2
+  history: 10000
+
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: true
+  live_config_reload: true
