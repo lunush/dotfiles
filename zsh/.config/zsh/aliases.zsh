@@ -58,6 +58,7 @@ viewlater() {
   id=$(task add +viewlater +@computer +@internet "$description" | sed -n 's/Created task \(.*\)./\1/p')
   task "$id" annotate "$link"
 }
+
 alias vl="viewlater"
 alias inbox="task add +inbox"
 tickle() {
@@ -65,6 +66,13 @@ tickle() {
   shift
   inbox +tickle wait:$wait ${@:1}
 }
+
+viewnow() {
+  link=$(task $1 | grep -o "https?://.*")
+  echo $link | xclip -selection clipboard
+  task _get $1.description
+}
+alias vn="viewnow"
 
 # Clean up
 alias yarn="yarn --use-yarnrc $XDG_CACHE_HOME/yarn/yarnrc"
