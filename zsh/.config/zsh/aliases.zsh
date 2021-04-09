@@ -12,6 +12,7 @@ alias v="nvim"
 alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
+alias stow="stow -v"
 
 alias ps="procs"
 alias cat="bat"
