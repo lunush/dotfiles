@@ -45,7 +45,7 @@ export XDG_TEMPLATES_DIR="$HOME/data/templates"
 export XDG_VIDEOS_DIR="$HOME/data/videos"
 
 # Taskwarrior
-export TASKRC="${XDG_CONFIG_HOME:-$HOME/.config}/task/taskrc"
+export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 
 # Homebrew
 export HOMEBREW_PREFIX="$HOME/.local/linuxbrew"
@@ -54,27 +54,27 @@ export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/libnsl/include"
 export PKG_CONFIG_PATH="$HOMEVREW_PREFIX/opt/libnsl/lib/pkgconfig"
 
 # Java, Android Studio, and Tools
-export ANDROID_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
+export ANDROID_HOME="$XDG_DATA_HOME/android"
 export ANDROID_SDK_ROOT=$ANDROID_HOME
-export ANDROID_SDK="${XDG_DATA_HOME:-$HOME/.local/share}/android"
-export ANDROID_EMULATOR_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
-export ANDROID_AVD_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android/avd"
-export STUDIO_JDK="${XDG_DATA_HOME:-$HOME/.local/share}/java/"
-export JAVA_FONTS="${XDG_DATA_HOME:-$HOME/.local/share}/java/fonts"
-export GRADLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gradle"
+export ANDROID_SDK="$XDG_DATA_HOME/android"
+export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME/android"
+export ANDROID_AVD_HOME="$XDG_DATA_HOME/android/avd"
+export STUDIO_JDK="$XDG_DATA_HOME/java/"
+export JAVA_FONTS="$XDG_DATA_HOME/java/fonts"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 
 # Ruby
-export GEM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gem"
-export GEM_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/gem"
+export GEM_HOME="$XDG_DATA_HOME/gem"
+export GEM_PATH="$XDG_DATA_HOME/gem"
 export GEM_BIN="$GEM_PATH/ruby/2.7.0/bin"
-export GEM_SPEC_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/gem"
-export BUNDLE_USER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/gem/bundle"
-export BUNDLE_USER_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/gem/bundle"
-export BUNDLE_USER_PLUGIN="${XDG_DATA_HOME:-$HOME/.local/share}/gem/bundle"
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/gem/bundle"
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/gem/bundle"
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/gem/bundle"
 
 # Dart & Flutter
-export FLUTTER="${XDG_DATA_HOME:-$HOME/.local/share}/flutter"
-export PUB_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/pub/cache"
+export FLUTTER="$XDG_DATA_HOME/flutter"
+export PUB_CACHE="$XDG_CACHE_HOME/pub/cache"
 
 # Set ripgrep to be used in fzf
 if type rg &>/dev/null; then
@@ -83,66 +83,66 @@ if type rg &>/dev/null; then
 fi
 
 # Solargraph
-export SOLARGRAPH_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/solargraph"
+export SOLARGRAPH_CACHE="$XDG_CACHE_HOME/solargraph"
 
 # Deno
-export DENO_INSTALL_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/deno"
+export DENO_INSTALL_ROOT="$XDG_DATA_HOME/deno"
 
 # GTK2
-export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 
 # less
 export LESSHISTFILE=-
 
 # wget
-export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # gnupg
-export GNUPGHOME="${XDG_CONFIG_HOME:-$HOME/.config}/gnupg"
+export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
 # Wine
-export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wine/default"
+export WINEPREFIX="$XDG_DATA_HOME/wine/default"
 
 # Kodi
-export KODI_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/kodi"
+export KODI_DATA="$XDG_DATA_HOME/kodi"
 
 # pass
-export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
 # tmux
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 
 # Rust
-export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
 # Go
-export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export GOPATH="$XDG_DATA_HOME/go"
 
 # Ansible
-export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
+export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
 
 # Node & npm
-export NODE_REPL_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/node/node_repl_history"
+export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node/node_repl_history"
 export NODE_OPTIONS="--max-old-space-size=10000"
-export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 # Texlive
-export TEXMFHOME="${XDG_DATA_HOME:-$HOME/.local/share}/texmf"
-export TEXMFVAR="${XDG_CACHE_HOME:-$HOME/.cache}/texlive/texmf-var"
-export TEXMFCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/texlive/texmf-config"
+export TEXMFHOME="$XDG_DATA_HOME/texmf"
+export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
+export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 
 # Minikube
-export MINIKUBE_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/minikube"
+export MINIKUBE_HOME="$XDG_DATA_HOME/minikube"
 
 # Snap
-export SNAP_REAL_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/snap/"
+export SNAP_REAL_HOME="$XDG_DATA_HOME/snap/"
 
 # Next.js
 export NEXT_TELEMENTY_DISABLED=1
 
 # libice
-export ICEAUTHORITY="${XDG_CACHE_HOME:-$HOME/.cache}/ICEauthority"
+export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 
 # Update $PATH
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
@@ -170,8 +170,8 @@ export ZINIT[SNIPPETS_DIR]="$XDG_DATA_HOME/zsh/zinit/snippets"
 export ZPFX="$XDG_DATA_HOME/zsh/zinit/polaris"
 
 # The Ugly SSH Workaround
-# export SSH_CONFIG="-F ${XDG_CONFIG_HOME}/ssh/config"
-export SSH_KNOWN_HOSTS="-o UserKnownHostsFile=${XDG_CONFIG_HOME}/ssh/known_hosts"
+# export SSH_CONFIG="-F $XDG_CONFIG_HOME/ssh/config"
+export SSH_KNOWN_HOSTS="-o UserKnownHostsFile=$XDG_CONFIG_HOME/ssh/known_hosts"
 export GIT_SSH="ssh $SSH_CONFIG $SSH_KNOWN_HOSTS"
 export GIT_SSH_COMMAND=$GIT_SSH
 
