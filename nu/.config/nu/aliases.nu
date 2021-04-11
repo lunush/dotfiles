@@ -8,9 +8,6 @@ alias .6 = cd ../../../../../../
 
 # Programs
 alias v = nvim
-alias mv = mv -iv
-alias cp = cp -riv
-alias mkdir = mkdir -vp
 alias stow = stow -v
 
 alias cat = bat
