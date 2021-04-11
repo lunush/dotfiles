@@ -158,3 +158,6 @@ cmd('autocmd BufWritePre * %s/\\s\\+$//e')
 
 -- Treat .html.erb files as html
 cmd('au! BufNewFile,BufRead *.html.erb set ft=html')
+
+-- Treat .nu files as bash
+cmd('au! BufNewFile,BufRead *.nu set ft=bash')
