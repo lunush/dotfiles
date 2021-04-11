@@ -1,0 +1,230 @@
+complete_from_path = true
+ctrlc_exit = false
+disable_table_indexes = false
+filesize_format = "B"
+filesize_metric = true
+nonzero_exit_errors = true
+path = [
+  "/home/user/.local/linuxbrew/bin",
+  "/home/user/.local/linuxbrew/sbin",
+  "/home/user/.local/linuxbrew/bin",
+  "/home/user/.local/linuxbrew/sbin",
+  "/usr/local/sbin",
+  "/usr/local/bin",
+  "/usr/bin",
+  "/usr/bin/site_perl",
+  "/usr/bin/vendor_perl",
+  "/usr/bin/core_perl",
+  "/bin",
+  "/home/user/.local/share/android/cmdline-tools/tools/bin",
+  "/home/user/.local/share/android/cmdline-tools/tools",
+  "/home/user/.local/share/android/platform-tools",
+  "/home/user/.local/share/android/emulator",
+  "/home/user/.local/share/flutter/bin",
+  "/home/user/.local/share/deno/bin",
+  "/home/user/.local/share/npm/bin",
+  "/home/user/.local/bin",
+  "/home/user/.local/share/cargo/bin",
+  "/home/user/.local/share/gem/ruby/2.7.0/bin",
+]
+pivot_mode = "auto"
+# plugin_dirs = ["D:\\Src\\GitHub\\nu-plugin-lib\\samples\\Nu.Plugin.Len\\bin\\Debug\\netcoreapp3.1"]
+prompt = "starship prompt"
+rm_always_trash = true
+skip_welcome_message = true
+startup = [
+  "source /home/user/.config/nu/init.nu",
+  "source /home/user/.config/nu/env.nu",
+  "source /home/user/.config/nu/aliases.nu"
+]
+table_mode = "other"
+
+[color_config]
+header_align = "l"
+header_bold = true
+header_color = "c"
+index_color = "rd"
+leading_trailing_space_bg = "white"
+primitive_binary = "cyan"
+primitive_boolean = "green"
+primitive_columnpath = "cyan"
+primitive_date = "ru"
+primitive_decimal = "red"
+primitive_duration = "blue"
+primitive_filesize = "ur"
+primitive_int = "green"
+primitive_line = "yellow"
+primitive_path = "yellow"
+primitive_pattern = "white"
+primitive_range = "purple"
+primitive_string = "pb"
+separator_color = "purple"
+
+[line_editor]
+auto_add_history = true
+bell_style = "audible"
+color_mode = "enabled"
+completion_prompt_limit = 100
+completion_type = "circular"
+edit_mode = "emacs"
+history_duplicates = "ignoreconsecutive"
+history_ignore_space = false
+keyseq_timeout_ms = 500
+max_history_size = 100000
+tab_stop = 4
+
+[textview]
+colored_output = true
+grid = false
+header = true
+line_numbers = true
+pager = "less"
+paging_mode = "QuitIfOneScreen"
+snip = true
+tab_width = 4
+term_width = "default"
+theme = "TwoDark"
+true_color = true
+use_italics = true
+vcs_modification_markers = true
+wrapping_mode = "NoWrapping"
+
+[env]
+# HOME = "/home/user"
+
+# # XDG Dirs
+# XDG_CONFIG_HOME = "$HOME/.config"
+# XDG_DATA_HOME = "$HOME/.local/share"
+# XDG_CACHE_HOME = "$HOME/.cache"
+
+# # Default programs:
+# EDITOR = "nvim"
+# GIT_EDITOR = "nvim"
+# VISUAL = "nvim"
+# TERMINAL = "alacritty"
+# BROWSER = "chromium"
+# READER = "zathura"
+
+# # .xinitrc
+# XINITRC = "$XDG_CONFIG_HOME/x11/xinitrc"
+# XSERVERRC = "$XDG_CONFIG_HOME/x11/xserverrc"
+
+# # .inputrc
+# INPUTRC = "$XDG_CONFIG_HOME/inputrc"
+
+# # .editrc
+# EDITRC = "$XDG_CONFIG_HOME/editrc"
+
+# # User Dirs
+# XDG_DESKTOP_DIR = "$HOME/data/desktop"
+# XDG_DOCUMENTS_DIR = "$HOME/data/documents"
+# XDG_DOWNLOAD_DIR = "$HOME/data/downloads"
+# XDG_MUSIC_DIR = "$HOME/data/music"
+# XDG_PICTURES_DIR = "$HOME/data/pictures"
+# XDG_PUBLICSHARE_DIR = "$HOME/data/public"
+# XDG_TEMPLATES_DIR = "$HOME/data/templates"
+# XDG_VIDEOS_DIR = "$HOME/data/videos"
+
+# # Taskwarrior
+# TASKRC = "$XDG_CONFIG_HOME/task/taskrc"
+
+# # Homebrew
+# HOMEBREW_PREFIX = "$HOME/.local/linuxbrew"
+# LDFLAGS = "-L$HOMEBREW_PREFIX/opt/libnsl/lib"
+# CPPFLAGS = "-I$HOMEBREW_PREFIX/opt/libnsl/include"
+# PKG_CONFIG_PATH = "$HOMEVREW_PREFIX/opt/libnsl/lib/pkgconfig"
+
+# # Java, Android Studio, and Tools
+# ANDROID_HOME = "$XDG_DATA_HOME/android"
+# ANDROID_SDK_ROOT = "ANDROID_HOM"
+# ANDROID_SDK = "$XDG_DATA_HOME/android"
+# ANDROID_EMULATOR_HOME = "$XDG_DATA_HOME/android"
+# ANDROID_AVD_HOME = "$XDG_DATA_HOME/android/avd"
+# STUDIO_JDK = "$XDG_DATA_HOME/java/"
+# JAVA_FONTS = "$XDG_DATA_HOME/java/fonts"
+# GRADLE_USER_HOME = "$XDG_DATA_HOME/gradle"
+
+# # Ruby
+# GEM_HOME = "$XDG_DATA_HOME/gem"
+# GEM_PATH = "$XDG_DATA_HOME/gem"
+# GEM_BIN = "$GEM_PATH/ruby/2.7.0/bin"
+# GEM_SPEC_CACHE = "$XDG_CACHE_HOME/gem"
+# BUNDLE_USER_CONFIG = "$XDG_CONFIG_HOME/gem/bundle"
+# BUNDLE_USER_CACHE = "$XDG_CACHE_HOME/gem/bundle"
+# BUNDLE_USER_PLUGIN = "$XDG_DATA_HOME/gem/bundle"
+
+# # Dart & Flutter
+# FLUTTER = "$XDG_DATA_HOME/flutter"
+# PUB_CACHE = "$XDG_CACHE_HOME/pub/cache"
+
+# # Set ripgrep to be used in fzf
+# FZF_DEFAULT_COMMAND = "rg --files"
+# FZF_DEFAULT_OPTS = "-m --height 40% --border"
+
+# # Solargraph
+# SOLARGRAPH_CACHE = "$XDG_CACHE_HOME/solargraph"
+
+# # Deno
+# DENO_INSTALL_ROOT = "$XDG_DATA_HOME/deno"
+
+# # GTK2
+# GTK2_RC_FILES = "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+
+# # less
+# LESSHISTFILE = "-"
+
+# # wget
+# WGETRC = "$XDG_CONFIG_HOME/wget/wgetrc"
+
+# # gnupg
+# GNUPGHOME = "$XDG_CONFIG_HOME/gnupg"
+
+# # Wine
+# WINEPREFIX = "$XDG_DATA_HOME/wine/default"
+
+# # Kodi
+# KODI_DATA = "$XDG_DATA_HOME/kodi"
+
+# # pass
+# PASSWORD_STORE_DIR = "$XDG_DATA_HOME/password-store"
+
+# # tmux
+# TMUX_TMPDIR = "$XDG_RUNTIME_DIR"
+
+# # Rust
+# CARGO_HOME = "$XDG_DATA_HOME/cargo"
+# RUSTUP_HOME = "$XDG_DATA_HOME/rustup"
+
+# # Go
+# GOPATH = "$XDG_DATA_HOME/go"
+
+# # Ansible
+# ANSIBLE_CONFIG = "$XDG_CONFIG_HOME/ansible/ansible.cfg"
+
+# # Node & npm
+# NODE_REPL_HISTORY = "$XDG_CACHE_HOME/node/node_repl_history"
+# NODE_OPTIONS = "--max-old-space-size=10000"
+# NPM_CONFIG_USERCONFIG = "$XDG_CONFIG_HOME/npm/npmrc"
+
+# # Texlive
+# TEXMFHOME = "$XDG_DATA_HOME/texmf"
+# TEXMFVAR = "$XDG_CACHE_HOME/texlive/texmf-var"
+# TEXMFCONFIG = "$XDG_CONFIG_HOME/texlive/texmf-config"
+
+# # Minikube
+# MINIKUBE_HOME = "$XDG_DATA_HOME/minikube"
+
+# # Snap
+# SNAP_REAL_HOME = "$XDG_DATA_HOME/snap/"
+
+# # Next.js
+# NEXT_TELEMENTY_DISABLED = "1"
+
+# # libice
+# ICEAUTHORITY = "$XDG_CACHE_HOME/ICEauthority"
+
+# # The Ugly SSH Workaround
+# # export SSH_CONFIG="-F $XDG_CONFIG_HOME/ssh/config"
+# MANPAGER = "nvim -MR -c 'set ft=man' -"
+# SSH_KNOWN_HOSTS = "-o UserKnownHostsFile=$XDG_CONFIG_HOME/ssh/known_hosts"
+# GIT_SSH = "ssh $SSH_CONFIG $SSH_KNOWN_HOSTS"
