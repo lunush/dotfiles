@@ -11,7 +11,7 @@ let-env EDITOR = "nvim"
 let-env GIT_EDITOR = "nvim"
 let-env VISUAL = "nvim"
 let-env TERMINAL = "alacritty"
-let-env BROWSER = "chromium"
+let-env BROWSER = "firefox"
 let-env READER = "zathura"
 let-env MANPAGER = "nvim -MR -c 'set ft=man' -"
 
