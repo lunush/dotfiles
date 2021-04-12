@@ -20,7 +20,7 @@ def bukusearch [query: string] {
 }
 
 # Dotfiles
-alias en = nvim -c 'cd /home/user/.config/zsh' /home/user/.config/zsh
+alias en = nvim -c 'cd /home/user/.config/nu' /home/user/.config/nu
 alias ev = nvimn-c 'cd /home/user/.config/nvim' /home/user/.config/nvim
 alias et = nvim -c 'cd /home/user/.config/tmux' /home/user/.config/tmux
 alias ea = nvim -c 'cd /home/user/.config/alacritty' /home/user/.config/alacritty
