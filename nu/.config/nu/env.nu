@@ -135,5 +135,5 @@ let-env ICEAUTHORITY = $(build-string $nu.env.XDG_CACHE_HOME "/ICEauthority")
 
 # The Ugly SSH Workaround
 # let-env SSH_CONFIG = $(build-string "-F " $nu.env.XDG_CONFIG_HOME "/ssh/config")
-let-env SSH_KNOWN_HOSTS = $(build-string "-o UserKnownHostsFile=" $nu.env.XDG_CONFIG_HOME "/ssh/known_hosts")
-let-env GIT_SSH = $(build-string "ssh " $nu.env.SSH_KNOWN_HOSTS)
+# let-env SSH_KNOWN_HOSTS = $(build-string "-o UserKnownHostsFile=" $nu.env.XDG_CONFIG_HOME "/ssh/known_hosts")
+# let-env GIT_SSH = $(build-string "ssh " $nu.env.SSH_KNOWN_HOSTS)
