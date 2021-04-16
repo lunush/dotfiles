@@ -62,12 +62,6 @@ map('i', '<C-v>', '<ESC>--+pa')
 -- Emmet Vim
 g.user_emmet_leader_key='<'
 
--- Floaterm
-g.floaterm_keymap_toggle = '<F1>'
-g.floaterm_keymap_next = '<F2>'
-g.floaterm_keymap_prev = '<F3>'
-g.floaterm_keymap_new = '<F4>'
-
 -- Tab Completion
 map('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { expr = true })
 map('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true })
