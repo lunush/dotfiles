@@ -70,14 +70,6 @@ hlmap["punctuation.bracket"] = nil
 -- emmet-vim
 vim.g.user_emmet_mode = 'a'
 
--- floatterm
-g.floaterm_gitcommit = 'floaterm'
-g.floaterm_autoinsert = 1
-g.floaterm_width = 0.8
-g.floaterm_height = 0.8
-g.floaterm_wintitle = 0
-g.floaterm_autoclose = 1
-
 -- FixCursorHold
 g.cursorhold_updatetime = 50
 
