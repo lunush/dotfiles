@@ -1,9 +1,10 @@
 complete_from_path = true
+completion_match_method = "case-insensitive"
 ctrlc_exit = false
 disable_table_indexes = false
-filesize_format = "B"
+filesize_format = "kb"
 filesize_metric = true
-nonzero_exit_errors = true
+nonzero_exit_errors = false
 path = [
   "/home/user/.local/linuxbrew/bin",
   "/home/user/.local/linuxbrew/sbin",
@@ -28,16 +29,16 @@ path = [
   "/home/user/.local/share/gem/ruby/2.7.0/bin",
 ]
 pivot_mode = "auto"
-# plugin_dirs = ["D:\\Src\\GitHub\\nu-plugin-lib\\samples\\Nu.Plugin.Len\\bin\\Debug\\netcoreapp3.1"]
+# plugin_dirs = ["/home/user/.local/share/nu/plugins"]
 prompt = "starship prompt"
-rm_always_trash = true
+rm_always_trash = false
 skip_welcome_message = true
 startup = [
   "source /home/user/.config/nu/init.nu",
   "source /home/user/.config/nu/env.nu",
   "source /home/user/.config/nu/aliases.nu"
 ]
-table_mode = "other"
+table_mode = "compact"
 
 [color_config]
 header_align = "l"
