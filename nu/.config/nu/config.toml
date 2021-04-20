@@ -67,12 +67,12 @@ bell_style = "audible"
 color_mode = "enabled"
 completion_prompt_limit = 100
 completion_type = "circular"
-edit_mode = "emacs"
+edit_mode = "vi"
 history_duplicates = "ignoreconsecutive"
 history_ignore_space = false
-keyseq_timeout_ms = 500
+keyseq_timeout_ms = 200
 max_history_size = 100000
-tab_stop = 4
+tab_stop = 2
 
 [textview]
 colored_output = true
