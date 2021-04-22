@@ -47,6 +47,9 @@ export XDG_VIDEOS_DIR="$HOME/data/videos"
 # Taskwarrior
 export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 
+# Tree Sitter
+export TREE_SITTER_DIR="$XDG_DATA_HOME/tree-sitter"
+
 # Homebrew
 export HOMEBREW_PREFIX="$HOME/.local/linuxbrew"
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libnsl/lib"
