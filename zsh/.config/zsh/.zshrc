@@ -6,13 +6,10 @@
 # Source exports
 source $ZDOTDIR/exports.zsh
 
+eval $(starship init zsh)
+
 # Autoinstall zinit if not installed
 [ ! -d $XDG_DATA_HOME/zsh/zinit/bin ] && git clone https://github.com/zdharma/zinit $XDG_DATA_HOME/zsh/zinit/bin
-
-# Start tmux
-if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-        tmux attach || exec tmux new-session && exit
-fi
 
 # Start ssh-agent
 eval $(ssh-agent -s) >/dev/null
@@ -66,21 +63,21 @@ bindkey -M viins 'kj' vi-cmd-mode
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
-        if [[ ${KEYMAP} == vicmd ]] ||
-                [[ $1 = 'block' ]]; then
-                echo -ne '\e[1 q'
-        elif [[ ${KEYMAP} == main ]] ||
-                [[ ${KEYMAP} == viins ]] ||
-                [[ ${KEYMAP} = '' ]] ||
-                [[ $1 = 'beam' ]]; then
-                echo -ne '\e[5 q'
-        fi
+  if [[ ${KEYMAP} == vicmd ]] ||
+    [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+    [[ ${KEYMAP} == viins ]] ||
+    [[ ${KEYMAP} = '' ]] ||
+    [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
 }
 
 zle -N zle-keymap-select
 zle-line-init() {
-        zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-        echo -ne "\e[5 q"
+  zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+  echo -ne "\e[5 q"
 }
 zle -N zle-line-init
 echo -ne '\e[5 q'                # Use beam shape cursor on startup.
