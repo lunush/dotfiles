@@ -73,9 +73,6 @@ vim.g.user_emmet_mode = 'a'
 -- FixCursorHold
 g.cursorhold_updatetime = 50
 
--- vim-moonfly-colors
-g.moonflyCursorColor = 1
-
 -- vim-tmux-navigator
 g.tmux_navigator_no_mappings = 1
 g.tmux_navigator_save_on_switch = 1
