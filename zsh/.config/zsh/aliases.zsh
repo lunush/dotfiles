@@ -74,6 +74,3 @@ viewnow() {
   task _get $1.description
 }
 alias vn="viewnow"
-
-# Clean up
-alias yarn="yarn --use-yarnrc $XDG_CACHE_HOME/yarn/yarnrc"
