@@ -1,5 +1,8 @@
 local cmd, g, lsp = vim.cmd, vim.g, vim.lsp
 
+-- todo-comments
+require('todo-comments').setup{}
+
 -- lsp_extensions
 cmd('autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require"lsp_extensions".inlay_hints{ prefix = "", highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }')
 
