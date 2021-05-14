@@ -80,6 +80,7 @@ map('v', '<leader>/', '<Plug>kommentary_visual_default<Esc>', { noremap = false 
 
 -- a stands for Actions
 map('n', '<leader>as', ':let @/ = ""<CR>')
+map('n', '<leader>at', ':TodoQuickFix<CR>')
 
 -- b stands for Buffer
 map('n', '<leader>bb1', ':b1<CR>')
@@ -109,6 +110,8 @@ map('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>')
 map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<CR>')
 map('n', '<leader>ll', '<cmd>lua vim.lsp.util.show_line_diagnostics()<CR>')
+map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+map('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
 -- n stands for Navigation (navigate in file)
 map('n', '<leader>nf', ':Files<CR>')
