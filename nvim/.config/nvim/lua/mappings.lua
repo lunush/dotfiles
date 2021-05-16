@@ -80,7 +80,6 @@ map('v', '<leader>/', '<Plug>kommentary_visual_default<Esc>', { noremap = false 
 
 -- a stands for Actions
 map('n', '<leader>as', ':let @/ = ""<CR>')
-map('n', '<leader>at', ':TodoQuickFix<CR>')
 
 -- b stands for Buffer
 map('n', '<leader>bb1', ':b1<CR>')
@@ -114,9 +113,12 @@ map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 map('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
 -- n stands for Navigation (navigate in file)
-map('n', '<leader>nf', ':Files<CR>')
+--[[ map('n', '<leader>nf', ':Files<CR>')
 map('n', '<leader>ng', ':GFiles<CR>')
-map('n', '<leader>nr', ':Rg<CR>')
+map('n', '<leader>nr', ':Rg<CR>') ]]
+map('n', '<leader>nf', ':Telescope find_files<CR>')
+map('n', '<leader>ng', ':Telescope live_grep<CR>')
+map('n', '<leader>nt', ':TodoTelescope<CR>')
 
 -- w standas for Wiki
 map('n', '<leader>ww', ':VimwikiIndex<CR>')
