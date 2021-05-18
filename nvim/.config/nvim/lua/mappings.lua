@@ -8,6 +8,9 @@ end
 -- Leader Key
 g.mapleader = ' '
 
+-- Better ~
+map('n', '~', '~h')
+
 -- Source Current Config
 map('n', '<leader>SS', ':source ~/.config/nvim/init.lua<CR>')
 
