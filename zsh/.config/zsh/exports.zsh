@@ -14,7 +14,7 @@ export EDITOR="nvim"
 export GIT_EDITOR="nvim"
 export VISUAL="nvim"
 export TERMINAL="alacritty"
-export BROWSER="chromium"
+export BROWSER="firefox"
 export READER="zathura"
 export MANPAGER="nvim -MR -c 'set ft=man' -"
 
