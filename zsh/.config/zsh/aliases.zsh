@@ -13,6 +13,7 @@ alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 alias stow="stow -v"
+alias zellij="zellij --layout ~/.config/zellij/default_layout.yml"
 
 alias ps="procs"
 alias cat="bat"
