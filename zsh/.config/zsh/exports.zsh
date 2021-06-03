@@ -79,12 +79,6 @@ export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/gem/bundle"
 export FLUTTER="$XDG_DATA_HOME/flutter"
 export PUB_CACHE="$XDG_CACHE_HOME/pub/cache"
 
-# Set ripgrep to be used in fzf
-if type rg &>/dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
-  export FZF_DEFAULT_OPTS='-m --height 40% --border'
-fi
-
 # Solargraph
 export SOLARGRAPH_CACHE="$XDG_CACHE_HOME/solargraph"
 
