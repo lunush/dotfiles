@@ -28,6 +28,7 @@ bukusearch() {
 alias ez="nvim -c 'cd $HOME/.config/zsh' $HOME/.config/zsh"
 alias ev="nvim -c 'cd $HOME/.config/nvim' $HOME/.config/nvim"
 alias ea="nvim -c 'cd $HOME/.config/alacritty' $HOME/.config/alacritty"
+alias eze="nvim -c 'cd $HOME/.config/zellij' $HOME/.config/zellij"
 
 # Random
 dudu() {
