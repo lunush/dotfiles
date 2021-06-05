@@ -48,6 +48,7 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate
 source $XDG_DATA_HOME/zsh/zinit/bin/zinit.zsh
 source $ZDOTDIR/plugins.zsh
 source $ZDOTDIR/aliases.zsh
+source /usr/share/nvm/init-nvm.sh
 
 # Tab auto-completion
 autoload -U compinit
