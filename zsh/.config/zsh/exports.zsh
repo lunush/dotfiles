@@ -133,13 +133,19 @@ export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export MINIKUBE_HOME="$XDG_DATA_HOME/minikube"
 
 # Snap
-export SNAP_REAL_HOME="$XDG_DATA_HOME/snap/"
+export SNAP_REAL_HOME="$XDG_DATA_HOME/snap"
 
 # Next.js
 export NEXT_TELEMENTY_DISABLED=1
 
+# NVM
+export NVM_DIR="$XDG_DATA_HOME/nvm"
+
 # libice
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
+
+# Zoom
+export SSB_HOME="$XDG_DATA_HOME/zoom"
 
 # Update $PATH
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"

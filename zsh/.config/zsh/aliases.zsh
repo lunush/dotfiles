@@ -71,3 +71,8 @@ viewnow() {
   task _get $1.description
 }
 alias vn="viewnow"
+
+# Clean up
+alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"
+alias mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy"
+alias yarn='yarn --use-yarnrc "$XDG_CACHE_HOME/yarn/yarnrc"'
