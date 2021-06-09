@@ -20,13 +20,59 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
-local servers = {'tsserver', 'vimls', 'jsonls', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls',  'graphql', 'rust_analyzer', 'solargraph', 'sqlls'}
+local servers = {'vimls', 'jsonls', 'yamlls', 'dockerls', 'html', 'cssls', 'bashls',  'graphql', 'rust_analyzer', 'solargraph', 'sqlls'}
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
 end
+
+require("null-ls").setup {}
+lspconfig.tsserver.setup{
+    on_attach = function(client, bufnr)
+        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+        -- disable tsserver formatting if you plan on formatting via null-ls
+        client.resolved_capabilities.document_formatting = false
+
+        local ts_utils = require("nvim-lsp-ts-utils")
+
+        -- defaults
+        ts_utils.setup {
+            debug = false,
+            disable_commands = false,
+            enable_import_on_completion = true,
+
+            -- eslint
+            eslint_enable_code_actions = true,
+            eslint_enable_disable_comments = true,
+            eslint_bin = "eslint",
+            eslint_config_fallback = nil,
+
+            -- eslint diagnostics
+            eslint_enable_diagnostics = true,
+            eslint_diagnostics_debounce = 250,
+
+            -- formatting
+            enable_formatting = false,
+            formatter = "prettier",
+            formatter_config_fallback = nil,
+
+            -- parentheses completion
+            complete_parens = false,
+            signature_help_in_parens = false,
+
+            -- update imports on file move
+            update_imports_on_move = true,
+            require_confirmation_on_move = false,
+            watch_dir = nil,
+        }
+
+        -- required to fix code action ranges
+        ts_utils.setup_client(client)
+      end,
+    capabilities = capabilities
+}
 
 lspconfig.sumneko_lua.setup{
   cmd = { 'lua-language-server' },
@@ -59,7 +105,11 @@ require('nvim-treesitter.configs').setup {
     highlight_current_scope = { enable = true },
   },
   context_commentstring = {
-    enable = true
+    enable = true,
+    enable_autocmd = false
+  },
+  autotag = {
+    enable = true,
   }
 }
 
@@ -124,7 +174,7 @@ g.neoformat_svelte_prettier = {
   exe = 'prettier',
   args = {'--stdin-filepath', '"%:p"'},
   stdin = 1,
-  }
+}
 
 -- Workaround for rustfmt to properly work
 g.neoformat_rust_rustfmt = {
@@ -143,6 +193,22 @@ g.vimwiki_key_mappings = { all_maps = 0 }
 
 -- kommentary
 g.kommentary_create_default_mappings = false
+local kommentary_filetypes = {'javascriptreact', 'typescriptreact', 'javascript', 'typescript', 'cssls', 'html', 'svelte'}
+for _, kommentary_filetype in ipairs(kommentary_filetypes) do
+  require('kommentary.config').configure_language(kommentary_filetype, {
+    hook_function = function()
+      require('ts_context_commentstring.internal').update_commentstring()
+    end,
+    prefer_single_line_comments = true,
+  })
+end
+
+-- headwind
+require("headwind").setup{}
+cmd('autocmd BufWritePre * lua require("headwind").buf_sort_tailwind_classes()')
+
+-- Organize imports on save
+cmd('autocmd BufWritePre *.js,*jsx,*.ts,*.tsx,*.svelte TSLspOrganizeSync')
 
 -- Other
 -- Trim whitespace on save

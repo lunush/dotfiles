@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   }
 
   -- Enhacements
-  use 'airblade/vim-rooter'
+  use 'ygm2/rooter.nvim'
   use 'christoomey/vim-tmux-navigator'
   use 'psliwka/vim-smoothie'
   use 'beauwilliams/focus.nvim'
@@ -36,10 +36,15 @@ return require('packer').startup(function(use)
   use 'alexaandru/nvim-lspupdate'
   use 'kevinhwang91/nvim-bqf'
   use 'onsails/lspkind-nvim'
+  use {
+    'jose-elias-alvarez/nvim-lsp-ts-utils',
+    requires = {{'nvim-lua/plenary.nvim'}, {'jose-elias-alvarez/null-ls.nvim'}}
+  }
 
   -- Development
   use 'b3nj5m1n/kommentary'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'windwp/nvim-ts-autotag'
   use 'jiangmiao/auto-pairs'
   use 'mattn/emmet-vim'
   use 'tpope/vim-surround'
@@ -51,6 +56,7 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use 'folke/todo-comments.nvim'
   -- use {'aca/completion-tabnine', run = 'version=3.1.9 ./install.sh'}
+  use "steelsojka/headwind.nvim"
 
   -- Snippets
   use 'hrsh7th/vim-vsnip'

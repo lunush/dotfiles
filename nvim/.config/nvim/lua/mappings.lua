@@ -11,6 +11,9 @@ g.mapleader = ' '
 -- Better ~
 map('n', '~', '~h')
 
+-- Better 0
+map('n', '0', "getline('.')[0 : col('.') - 2] =~# '^\\s\\+$' ? '0' : '^'", { expr = true })
+
 -- Source Current Config
 map('n', '<leader>SS', ':source ~/.config/nvim/init.lua<CR>')
 
@@ -63,7 +66,7 @@ map('v', '<C-v>', 'c<ESC>--+p')
 map('i', '<C-v>', '<ESC>--+pa')
 
 -- Emmet Vim
-g.user_emmet_leader_key='<'
+g.user_emmet_leader_key=','
 
 -- Tab Completion
 map('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { expr = true })
@@ -78,6 +81,8 @@ map('n', '<leader>h', '<C-W>h')
 map('n', '<leader>v', '<C-W>v')
 map('n', '<leader>d', ':bd<CR>')
 map('n', '<leader>e', ':Explore<CR>')
+--[[ map('n', '<leader>/', '<cmd>lua require("ts_context_commentstring.internal").update_commentstring()<cr>', { noremap = false })
+map('v', '<leader>/', '<cmd>lua require("ts_context_commentstring.internal").update_commentstring()<cr>', { noremap = false }) ]]
 map('n', '<leader>/', '<Plug>kommentary_line_default', { noremap = false })
 map('v', '<leader>/', '<Plug>kommentary_visual_default<Esc>', { noremap = false })
 
@@ -110,15 +115,16 @@ map('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>')
 map('n', '<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 map('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>')
+map('n', '<leader>ltr', '<cmd>TSLspRenameFile<CR>')
+map('n', '<leader>lti', '<cmd>TSLspImportAll<CR>')
+map('n', '<leader>lto', '<cmd>TSLspOrganize<CR>')
+map('n', '<leader>ltf', '<cmd>TSLspFixCurrent<CR>')
 map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<CR>')
 map('n', '<leader>ll', '<cmd>lua vim.lsp.util.show_line_diagnostics()<CR>')
 map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 map('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 
 -- n stands for Navigation (navigate in file)
---[[ map('n', '<leader>nf', ':Files<CR>')
-map('n', '<leader>ng', ':GFiles<CR>')
-map('n', '<leader>nr', ':Rg<CR>') ]]
 map('n', '<leader>nf', ':Telescope find_files<CR>')
 map('n', '<leader>ng', ':Telescope live_grep<CR>')
 map('n', '<leader>nt', ':TodoTelescope<CR>')
