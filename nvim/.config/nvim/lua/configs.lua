@@ -171,7 +171,7 @@ g.completion_chain_complete_list = {
 }
 
 -- neoformat
-cmd('autocmd BufWritePre * undojoin | Neoformat')
+cmd('autocmd BufWritePre * undojoin | silent Neoformat')
 g.shfmt_opt = "-ci"
 g.neoformat_svelte_prettier = {
   exe = 'prettier',
@@ -208,9 +208,12 @@ end
 
 -- headwind
 require("headwind").setup{}
-cmd('autocmd BufWritePre * lua require("headwind").buf_sort_tailwind_classes()')
+-- cmd('autocmd BufWritePre * lua require("headwind").buf_sort_tailwind_classes()')
 
 -- nvim-tree
+require('nvim-tree.events').on_nvim_tree_ready(function ()
+  vim.cmd("NvimTreeRefresh")
+end)
 g.nvim_tree_auto_close = 1
 g.nvim_tree_auto_open = 1
 g.nvim_tree_follow = 1
