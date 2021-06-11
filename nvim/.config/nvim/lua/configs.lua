@@ -168,7 +168,7 @@ g.completion_chain_complete_list = {
 }
 
 -- neoformat
-cmd('autocmd BufWritePre * Neoformat')
+cmd('autocmd BufWritePre * undojoin | Neoformat')
 g.shfmt_opt = "-ci"
 g.neoformat_svelte_prettier = {
   exe = 'prettier',
@@ -206,6 +206,12 @@ end
 -- headwind
 require("headwind").setup{}
 cmd('autocmd BufWritePre * lua require("headwind").buf_sort_tailwind_classes()')
+
+-- nvim-tree
+g.nvim_tree_auto_close = 1
+g.nvim_tree_auto_open = 1
+g.nvim_tree_follow = 1
+g.nvim_tree_quit_on_open = 1
 
 -- Organize imports on save
 cmd('autocmd BufWritePre *.js,*jsx,*.ts,*.tsx,*.svelte TSLspOrganizeSync')

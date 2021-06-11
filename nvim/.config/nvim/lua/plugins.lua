@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   use 'christoomey/vim-tmux-navigator'
   use 'psliwka/vim-smoothie'
   use 'beauwilliams/focus.nvim'
+  use 'kyazdani42/nvim-tree.lua'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
