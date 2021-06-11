@@ -1,8 +1,5 @@
 local cmd, g, lsp = vim.cmd, vim.g, vim.lsp
 
--- packer
-cmd('autocmd BufWritePost plugins.lua PackerCompile')
-
 -- todo-comments
 require('todo-comments').setup{}
 
@@ -219,11 +216,8 @@ g.nvim_tree_auto_open = 1
 g.nvim_tree_follow = 1
 g.nvim_tree_quit_on_open = 1
 
--- neogit
-require('neogit').setup{}
-
 -- Organize imports on save
-cmd('autocmd BufWritePre *.js,*jsx,*.ts,*.tsx,*.svelte TSLspOrganizeSync')
+cmd('autocmd BufWritePre *.ts,*.tsx TSLspOrganizeSync')
 
 -- Other
 -- Trim whitespace on save
