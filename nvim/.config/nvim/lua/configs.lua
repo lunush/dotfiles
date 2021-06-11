@@ -1,5 +1,8 @@
 local cmd, g, lsp = vim.cmd, vim.g, vim.lsp
 
+-- packer
+cmd('autocmd BufWritePost plugins.lua PackerCompile')
+
 -- todo-comments
 require('todo-comments').setup{}
 
@@ -151,7 +154,7 @@ require('nvim-web-devicons').setup()
 -- nvim-bufferline
 require('bufferline').setup()
 
--- completion-nvim
+-- completion
 cmd("autocmd BufEnter * lua require('completion').on_attach()")
 g.completion_menu_length = 10
 g.completion_trigger_character = {'.', '::', '<'}
