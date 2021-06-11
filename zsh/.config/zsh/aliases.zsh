@@ -25,10 +25,10 @@ bukusearch() {
 }
 
 # Dotfiles
-alias ez="nvim -c 'cd $HOME/.config/zsh' $HOME/.config/zsh"
-alias ev="nvim -c 'cd $HOME/.config/nvim' $HOME/.config/nvim"
-alias ea="nvim -c 'cd $HOME/.config/alacritty' $HOME/.config/alacritty"
-alias eze="nvim -c 'cd $HOME/.config/zellij' $HOME/.config/zellij"
+alias ez="nvim -c 'cd $HOME/.config/zsh' $HOME/.config/zsh/.zshrc"
+alias ev="nvim -c 'cd $HOME/.config/nvim' $HOME/.config/nvim/init.lua"
+alias ea="nvim -c 'cd $HOME/.config/alacritty' $HOME/.config/alacritty/alacritty.yml"
+alias eze="nvim -c 'cd $HOME/.config/zellij' $HOME/.config/zellij/config.yaml"
 
 # Random
 dudu() {
