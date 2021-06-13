@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-# Shell prompt
-export PROMPT="%F{5}   %f"
-export RPROMPT="%F{5}%~%f"
-
 # XDG Dirs
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
