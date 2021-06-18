@@ -50,7 +50,7 @@ return require('packer').startup(function(use)
   use 'mattn/emmet-vim'
   use 'tpope/vim-surround'
   use 'airblade/vim-gitgutter'
-  use 'sbdchd/neoformat'
+  use 'mhartington/formatter.nvim'
   use 'tpope/vim-rails'
   use 'metakirby5/codi.vim'
   use 'jparise/vim-graphql'

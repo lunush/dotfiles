@@ -167,21 +167,63 @@ g.completion_chain_complete_list = {
   }
 }
 
--- neoformat
-cmd('autocmd BufWritePre * undojoin | silent Neoformat')
-g.shfmt_opt = "-ci"
-g.neoformat_svelte_prettier = {
-  exe = 'prettier',
-  args = {'--stdin-filepath', '"%:p"'},
-  stdin = 1,
-}
-
--- Workaround for rustfmt to properly work
-g.neoformat_rust_rustfmt = {
-  exe = 'rustfmt',
-  args = { '--edition 2018' },
-  stdin = 1,
-}
+-- formatter
+local formatter_prettier = function(parser)
+  return {
+       function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--parser', parser},
+            stdin = true
+          }
+        end
+    }end
+require('formatter').setup({
+  logging = false,
+  filetype = {
+    typescript = formatter_prettier('typescript'),
+    typescriptreact = formatter_prettier('typescript'),
+    javascript = formatter_prettier('javascript'),
+    javascriptreact = formatter_prettier('javascript'),
+    svelte = formatter_prettier('svelte'),
+    graphql = formatter_prettier('graphql'),
+    markdown = formatter_prettier('markdown'),
+    json = formatter_prettier('json'),
+    html = formatter_prettier('html'),
+    css = formatter_prettier('css'),
+    scss = formatter_prettier('css'),
+    less = formatter_prettier('css'),
+    yaml = formatter_prettier('yaml'),
+    sh = {
+      function()
+        return {
+          exe = "shfmt",
+          args = {"-ci"},
+          stdin = true
+        }
+      end
+    },
+    rust = {
+      function()
+        return {
+          exe = "rustfmt",
+          args = {"--emit=stdout"},
+          stdin = true
+        }
+      end
+    },
+    lua = {
+        function()
+          return {
+            exe = "luafmt",
+            args = {"--indent-count", 2, "--stdin"},
+            stdin = true
+          }
+        end
+      }
+  }
+})
+cmd('autocmd BufWritePre * silent FormatWrite')
 
 -- vim-highlightedyank
 cmd('highlight HighlightedyankRegion cterm=reverse gui=reverse')
