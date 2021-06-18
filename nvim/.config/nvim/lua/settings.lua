@@ -1,7 +1,7 @@
 -- vim.opt: https://github.com/neovim/neovim/pull/13479
 
-vim.cmd('syntax on')
-vim.cmd('filetype plugin indent on')
+vim.cmd("syntax on")
+vim.cmd("filetype plugin indent on")
 
 vim.o.number = true
 vim.wo.number = true
@@ -42,17 +42,17 @@ vim.o.showtabline = 2
 vim.o.pumheight = 10
 vim.o.scrolloff = 10
 
-vim.o.colorcolumn = '+1'
-vim.wo.colorcolumn = '+1'
-vim.o.iskeyword = vim.bo.iskeyword .. ',-'
-vim.bo.iskeyword = vim.bo.iskeyword .. ',-'
-vim.o.matchpairs = vim.bo.matchpairs .. ',<:>'
-vim.bo.matchpairs = vim.bo.matchpairs .. ',<:>'
+vim.o.colorcolumn = "+1"
+vim.wo.colorcolumn = "+1"
+vim.o.iskeyword = vim.bo.iskeyword .. ",-"
+vim.bo.iskeyword = vim.bo.iskeyword .. ",-"
+vim.o.matchpairs = vim.bo.matchpairs .. ",<:>"
+vim.bo.matchpairs = vim.bo.matchpairs .. ",<:>"
 
-vim.o.clipboard = 'unnamedplus'
-vim.o.mouse = 'a'
-vim.o.completeopt = 'menu,menuone,noselect' -- remove preview
-vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.clipboard = "unnamedplus"
+vim.o.mouse = "a"
+vim.o.completeopt = "menu,menuone,noselect" -- remove preview
+vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.wildignore = [[
 .git,.hg,.svn
 *.aux,*.out,*.toc
@@ -66,6 +66,6 @@ vim.o.wildignore = [[
 *.swp,.lock,.DS_Store
 ]]
 
-vim.o.undodir = vim.fn.stdpath('cache')..'/undodir'
+vim.o.undodir = vim.fn.stdpath("cache") .. "/undodir"
 
 vim.g.netrw_dirhistmax = 0
