@@ -14,8 +14,12 @@ return require("packer").startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
 	use("akinsho/nvim-bufferline.lua")
-	use("glepnir/galaxyline.nvim")
 	use("dstein64/nvim-scrollview")
+	use("Shatur/neovim-ayu")
+	use({
+		"hoob3rt/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
 
 	-- Navigation
 	use({

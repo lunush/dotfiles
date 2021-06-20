@@ -1,5 +1,37 @@
 local cmd, g, lsp = vim.cmd, vim.g, vim.lsp
 
+-- ayu
+require("ayu").colorscheme()
+
+-- lualine
+require("lualine").setup({
+	options = {
+		icons_enabled = true,
+		theme = "ayu_dark",
+		component_separators = { "", "" },
+		section_separators = { "", "" },
+		disabled_filetypes = {},
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch" },
+		lualine_c = { "filename" },
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename" },
+		lualine_x = { "location" },
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {},
+	extensions = {},
+})
+
 -- todo-comments
 require("todo-comments").setup({})
 
@@ -97,14 +129,11 @@ lspconfig.sumneko_lua.setup({
 })
 
 -- Enable diagnostics
-lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
-	lsp.diagnostic.on_publish_diagnostics,
-	{
-		virtual_text = true,
-		signs = true,
-		update_in_insert = true,
-	}
-)
+lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+	virtual_text = true,
+	signs = true,
+	update_in_insert = true,
+})
 
 -- nvim-treesitter
 require("nvim-treesitter.configs").setup({
