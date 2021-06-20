@@ -21,8 +21,13 @@ map(
 	{ expr = true }
 )
 
--- Source Current Config
-map("n", "<leader>SS", ":source ~/.config/nvim/init.lua<CR>")
+-- Source current config and run PackerUpdate
+-- BUG: The plugin crushes if config folder contains non-vim related files
+map(
+	"n",
+	"<leader>SS",
+	":lua require('nvim-reload').Reload()<CR>:PackerUpdate<CR>"
+)
 
 -- Fix auto-pairs and completion-nvim compatability
 g.completion_confirm_key = ""

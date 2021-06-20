@@ -34,6 +34,7 @@ return require("packer").startup(function(use)
 	use("beauwilliams/focus.nvim")
 	use("kyazdani42/nvim-tree.lua")
 	use("antonk52/bad-practices.nvim")
+	-- use({ "famiu/nvim-reload", requires = { "nvim-lua/pleanry.nvim" } })
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
