@@ -33,6 +33,7 @@ return require("packer").startup(function(use)
 	use("psliwka/vim-smoothie")
 	use("beauwilliams/focus.nvim")
 	use("kyazdani42/nvim-tree.lua")
+	use("antonk52/bad-practices.nvim")
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
