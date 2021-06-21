@@ -1,6 +1,10 @@
 local cmd, g, lsp = vim.cmd, vim.g, vim.lsp
 
 -- ayu
+local ayu_colors = require("ayu.colors")
+g.ayu_overrides = {
+	TSFunction = { fg = ayu_colors.comment },
+}
 require("ayu").colorscheme()
 
 -- lualine
@@ -129,11 +133,14 @@ lspconfig.sumneko_lua.setup({
 })
 
 -- Enable diagnostics
-lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
-	virtual_text = true,
-	signs = true,
-	update_in_insert = true,
-})
+lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
+	lsp.diagnostic.on_publish_diagnostics,
+	{
+		virtual_text = true,
+		signs = true,
+		update_in_insert = true,
+	}
+)
 
 -- nvim-treesitter
 require("nvim-treesitter.configs").setup({
@@ -212,7 +219,8 @@ g.completion_chain_complete_list = {
 }
 
 -- formatter
-local formatter_prettier = function(parser)
+local formatter_prettier = function(parser, stdin)
+	stdin = stdin == nil and true or stdin
 	return {
 		function()
 			return {
@@ -223,7 +231,7 @@ local formatter_prettier = function(parser)
 					"--parser",
 					parser,
 				},
-				stdin = true,
+				stdin = stdin,
 			}
 		end,
 	}
@@ -234,7 +242,7 @@ require("formatter").setup({
 		typescript = formatter_prettier("typescript"),
 		typescriptreact = formatter_prettier("typescript"),
 		javascript = formatter_prettier("javascript"),
-		javascriptreact = formatter_prettier("javascript"),
+		javascriptreact = formatter_prettier("javascript", false),
 		svelte = formatter_prettier("svelte"),
 		graphql = formatter_prettier("graphql"),
 		markdown = formatter_prettier("markdown"),
