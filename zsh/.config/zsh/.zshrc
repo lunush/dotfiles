@@ -52,7 +52,10 @@ source /usr/share/nvm/init-nvm.sh
 
 # Tab auto-completion
 autoload -U compinit
-compinit -d $XDG_DATA_HOME/zsh
+compinit -d $XDG_DATA_HOME/zsh/zcompdump
+
+# Cache
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 
 # vi mode
 bindkey -v
