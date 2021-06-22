@@ -219,19 +219,19 @@ g.completion_chain_complete_list = {
 }
 
 -- formatter
-local formatter_prettier = function(parser, stdin)
-	stdin = stdin == nil and true or stdin
+local formatter_prettier = function(parser)
 	return {
 		function()
 			return {
 				exe = "prettier",
 				args = {
+					"--stdin",
 					"--stdin-filepath",
 					vim.api.nvim_buf_get_name(0),
-					"--parser",
-					parser,
+					--[[ "--parser",
+					parser, ]]
 				},
-				stdin = stdin,
+				stdin = true,
 			}
 		end,
 	}
