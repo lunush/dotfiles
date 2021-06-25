@@ -67,6 +67,7 @@ return require("packer").startup(function(use)
 	use("folke/todo-comments.nvim")
 	-- use {'aca/completion-tabnine', run = 'version=3.1.9 ./install.sh'}
 	use("steelsojka/headwind.nvim")
+	use("f-person/git-blame.nvim")
 
 	-- Snippets
 	use("hrsh7th/vim-vsnip")
