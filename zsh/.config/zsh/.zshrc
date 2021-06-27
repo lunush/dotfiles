@@ -41,9 +41,9 @@ setopt auto_list
 setopt auto_menu
 setopt always_to_end
 
-zstyle ':completion:*' menu select
-zstyle ':completion:*' group-name ''
-zstyle ':completion:::::' completer _expand _complete _ignored _approximate
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' group-name ''
+# zstyle ':completion:::::' completer _expand _complete _ignored _approximate
 
 source $XDG_DATA_HOME/zsh/zinit/bin/zinit.zsh
 source $ZDOTDIR/plugins.zsh
@@ -51,11 +51,11 @@ source $ZDOTDIR/aliases.zsh
 source /usr/share/nvm/init-nvm.sh
 
 # Tab auto-completion
-autoload -U compinit
-compinit -d $XDG_DATA_HOME/zsh/zcompdump
+# autoload -U compinit
+# compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 
 # Cache
-zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
+# zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 
 # vi mode
 bindkey -v
