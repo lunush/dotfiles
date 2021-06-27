@@ -50,6 +50,7 @@ return require("packer").startup(function(use)
 			{ "jose-elias-alvarez/null-ls.nvim" },
 		},
 	})
+	use("ray-x/lsp_signature.nvim")
 
 	-- Development
 	use("b3nj5m1n/kommentary")

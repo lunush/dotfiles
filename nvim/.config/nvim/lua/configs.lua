@@ -56,6 +56,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
+	-- lsp_signature
+	require("lsp_signature").on_attach()
 end
 
 local servers = {
@@ -71,6 +74,7 @@ local servers = {
 	"solargraph",
 	"sqlls",
 }
+
 for _, server in ipairs(servers) do
 	lspconfig[server].setup({
 		on_attach = on_attach,
