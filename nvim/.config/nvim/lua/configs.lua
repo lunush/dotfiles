@@ -148,7 +148,6 @@ lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
 
 -- nvim-treesitter
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "all",
 	highlight = { enable = true },
 	refactor = {
 		highlight_definitions = { enable = true },
@@ -324,13 +323,16 @@ require("headwind").setup({})
 --[[ require('nvim-tree.events').on_nvim_tree_ready(function ()
   vim.cmd("NvimTreeRefresh")
 end) ]]
-g.nvim_tree_auto_close = 1
-g.nvim_tree_auto_open = 1
-g.nvim_tree_follow = 1
+
 g.nvim_tree_quit_on_open = 1
 
+require("nvim-tree").setup({
+  auto_close = true,
+  auto_open = true,
+  follow = true
+})
 -- Organize imports on save
-cmd("autocmd BufWritePre *.ts,*.tsx TSLspOrganizeSync")
+-- cmd("autocmd BufWritePre *.ts,*.tsx TSLspOrganizeSync")
 
 -- Other
 -- Trim whitespace on save
@@ -340,4 +342,4 @@ cmd("autocmd BufWritePre * %s/\\s\\+$//e")
 cmd("au! BufNewFile,BufRead *.html.erb set ft=html")
 
 -- Treat .nu files as bash
-cmd("au! BufNewFile,BufRead *.nu set ft=bash")
+-- cmd("au! BufNewFile,BufRead *.nu set ft=bash")

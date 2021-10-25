@@ -60,7 +60,6 @@ return require("packer").startup(function(use)
 	use("mattn/emmet-vim")
 	use("tpope/vim-surround")
 	use("airblade/vim-gitgutter")
-	use("mhartington/formatter.nvim")
 	use("tpope/vim-rails")
 	use("metakirby5/codi.vim")
 	use("jparise/vim-graphql")
@@ -69,6 +68,8 @@ return require("packer").startup(function(use)
 	-- use {'aca/completion-tabnine', run = 'version=3.1.9 ./install.sh'}
 	use("steelsojka/headwind.nvim")
 	use("f-person/git-blame.nvim")
+	use("sbdchd/neoformat")
+  use('mhartington/formatter.nvim')
 
 	-- Snippets
 	use("hrsh7th/vim-vsnip")
