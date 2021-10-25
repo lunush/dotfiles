@@ -85,6 +85,7 @@ map("n", "<leader>h", "<C-W>h")
 map("n", "<leader>v", "<C-W>v")
 map("n", "<leader>d", ":bd<CR>")
 map("n", "<leader>e", ":Telescope find_files<CR>")
+map("n", "<leader>i", ":DiffviewOpen origin/main...HEAD<CR>")
 map("n", "<leader>/", "<Plug>kommentary_line_default", { noremap = false })
 map(
 	"v",

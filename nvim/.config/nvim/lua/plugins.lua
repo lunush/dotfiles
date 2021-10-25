@@ -35,13 +35,12 @@ return require("packer").startup(function(use)
 	use("antonk52/bad-practices.nvim")
 
 	-- LSP
-	use("neovim/nvim-lspconfig")
-	use("nvim-lua/completion-nvim")
-	use("nvim-lua/lsp_extensions.nvim")
   use {
       'neovim/nvim-lspconfig',
       'williamboman/nvim-lsp-installer',
   }
+	use("nvim-lua/completion-nvim")
+	use("nvim-lua/lsp_extensions.nvim")
 	use("kevinhwang91/nvim-bqf")
 	use("onsails/lspkind-nvim")
 	use({
@@ -75,6 +74,7 @@ return require("packer").startup(function(use)
       "vuki656/package-info.nvim",
       requires = "MunifTanjim/nui.nvim",
   })
+  use('sindrets/diffview.nvim')
 
 	-- Snippets
 	use("hrsh7th/vim-vsnip")
