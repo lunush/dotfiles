@@ -10,23 +10,12 @@ end
 -- Leader Key
 g.mapleader = " "
 
--- Better ~
-map("n", "~", "~h")
-
 -- Better 0
 map(
 	"n",
 	"0",
 	"getline('.')[0 : col('.') - 2] =~# '^\\s\\+$' ? '0' : '^'",
 	{ expr = true }
-)
-
--- Source current config and run PackerUpdate
--- BUG: The plugin crushes if config folder contains non-vim related files
-map(
-	"n",
-	"<leader>SS",
-	":lua require('nvim-reload').Reload()<CR>:PackerUpdate<CR>"
 )
 
 -- Fix auto-pairs and completion-nvim compatability
@@ -37,13 +26,6 @@ map(
 	'pumvisible() ? "<Plug>(completion_confirm_completion)" : "<cr>"',
 	{ expr = true }
 )
-
--- Navigation between splits
-map("n", "<C-h>", ":TmuxNavigateLeft<CR>")
-map("n", "<C-j>", ":TmuxNavigateDown<CR>")
-map("n", "<C-k>", ":TmuxNavigateUp<CR>")
-map("n", "<C-l>", ":TmuxNavigateRight<CR>")
-map("n", "<C-/>", ":TmuxNavigatePrevious<CR>")
 
 -- Snippets
 map(
@@ -102,8 +84,7 @@ map("n", "<leader>=", "<C-W>=")
 map("n", "<leader>h", "<C-W>h")
 map("n", "<leader>v", "<C-W>v")
 map("n", "<leader>d", ":bd<CR>")
-map("n", "<leader>e", ":NvimTreeToggle<CR>:NvimTreeRefresh<CR>")
-map("n", "<leader>g", ":Neogit<CR>")
+map("n", "<leader>e", ":Telescope find_files<CR>")
 map("n", "<leader>/", "<Plug>kommentary_line_default", { noremap = false })
 map(
 	"v",

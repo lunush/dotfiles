@@ -62,6 +62,9 @@ export STUDIO_JDK="$XDG_DATA_HOME/java/"
 export JAVA_FONTS="$XDG_DATA_HOME/java/fonts"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 
+# nnn
+export NNN_OPTS="H"
+
 # Ruby
 export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_PATH="$XDG_DATA_HOME/gem"

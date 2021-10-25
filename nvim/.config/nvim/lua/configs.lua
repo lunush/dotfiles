@@ -39,6 +39,15 @@ require("lualine").setup({
 -- todo-comments
 require("todo-comments").setup({})
 
+-- package-info
+require("package-info").setup({
+  package_manager = "npm"
+})
+
+-- blamer
+g.blamer_enabled = 1
+g.blamer_delay = 500
+
 -- lsp_extensions
 cmd(
 	'autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require"lsp_extensions".inlay_hints{ prefix = "", highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }'
@@ -169,6 +178,16 @@ hlmap.error = nil
 hlmap["punctuation.delimiter"] = "Delimiter"
 hlmap["punctuation.bracket"] = nil
 
+-- telescope
+require("telescope").setup({
+  pickers = {
+    find_files = {
+      hidden = true,
+      file_ignore_patterns = {"^.git/"}
+    }
+  }
+})
+
 -- emmet-vim
 vim.g.user_emmet_mode = "a"
 
@@ -194,10 +213,6 @@ g.rainbow_conf = {
 		"start=/</ end=/>/ fold",
 	},
 }
-
--- vim-hexokinase
-cmd("autocmd VimEnter * silent HexokinaseTurnOn")
-g.Hexokinase_highlighters = { "virtual" }
 
 -- nvim-web-devicons
 require("nvim-web-devicons").setup()
@@ -319,21 +334,6 @@ end
 require("headwind").setup({})
 -- cmd('autocmd BufWritePre * lua require("headwind").buf_sort_tailwind_classes()')
 
--- nvim-tree
---[[ require('nvim-tree.events').on_nvim_tree_ready(function ()
-  vim.cmd("NvimTreeRefresh")
-end) ]]
-
-g.nvim_tree_quit_on_open = 1
-
-require("nvim-tree").setup({
-  auto_close = true,
-  auto_open = true,
-  follow = true
-})
--- Organize imports on save
--- cmd("autocmd BufWritePre *.ts,*.tsx TSLspOrganizeSync")
-
 -- Other
 -- Trim whitespace on save
 cmd("autocmd BufWritePre * %s/\\s\\+$//e")
@@ -341,5 +341,3 @@ cmd("autocmd BufWritePre * %s/\\s\\+$//e")
 -- Treat .html.erb files as html
 cmd("au! BufNewFile,BufRead *.html.erb set ft=html")
 
--- Treat .nu files as bash
--- cmd("au! BufNewFile,BufRead *.nu set ft=bash")

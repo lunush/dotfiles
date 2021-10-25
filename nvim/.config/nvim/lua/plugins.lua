@@ -32,15 +32,16 @@ return require("packer").startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 	use("psliwka/vim-smoothie")
 	use("beauwilliams/focus.nvim")
-	use("kyazdani42/nvim-tree.lua")
 	use("antonk52/bad-practices.nvim")
-	-- use({ "famiu/nvim-reload", requires = { "nvim-lua/pleanry.nvim" } })
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("nvim-lua/completion-nvim")
 	use("nvim-lua/lsp_extensions.nvim")
-	use("alexaandru/nvim-lspupdate")
+  use {
+      'neovim/nvim-lspconfig',
+      'williamboman/nvim-lsp-installer',
+  }
 	use("kevinhwang91/nvim-bqf")
 	use("onsails/lspkind-nvim")
 	use({
@@ -65,11 +66,15 @@ return require("packer").startup(function(use)
 	use("jparise/vim-graphql")
 	use("editorconfig/editorconfig-vim")
 	use("folke/todo-comments.nvim")
-	-- use {'aca/completion-tabnine', run = 'version=3.1.9 ./install.sh'}
+	use({'aca/completion-tabnine', run = './install.sh'})
 	use("steelsojka/headwind.nvim")
-	use("f-person/git-blame.nvim")
+	use("APZelos/blamer.nvim")
 	use("sbdchd/neoformat")
   use('mhartington/formatter.nvim')
+  use({
+      "vuki656/package-info.nvim",
+      requires = "MunifTanjim/nui.nvim",
+  })
 
 	-- Snippets
 	use("hrsh7th/vim-vsnip")
@@ -81,7 +86,7 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter")
 	use("RRethy/vim-illuminate")
 	use("machakann/vim-highlightedyank")
-	use({ "RRethy/vim-hexokinase", run = "make hexokinase" })
+	use("norcalli/nvim-colorizer.lua")
 	use("luochen1990/rainbow")
 
 	-- Other
