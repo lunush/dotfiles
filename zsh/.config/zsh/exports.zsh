@@ -161,16 +161,6 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$CARGO_HOME/bin"
 export PATH="$PATH:$GEM_BIN"
 
-# zinit
-declare -A ZINIT
-export ZINIT[BIN_DIR]="$XDG_DATA_HOME/zsh/zinit/bin"
-export ZINIT[HOME_DIR]="$XDG_DATA_HOME/zsh/zinit"
-export ZINIT[PLUGINS_DIR]="$XDG_DATA_HOME/zsh/zinit/plugins"
-export ZINIT[ZCOMPDUMP_PATH]="$XDG_DATA_HOME/zsh/zcompdump"
-export ZINIT[COMPLETIONS_DIR]="$XDG_DATA_HOME/zsh/zinit/completions"
-export ZINIT[SNIPPETS_DIR]="$XDG_DATA_HOME/zsh/zinit/snippets"
-export ZPFX="$XDG_DATA_HOME/zsh/zinit/polaris"
-
 # The Ugly SSH Workaround
 # export SSH_CONFIG="-F $XDG_CONFIG_HOME/ssh/config"
 export SSH_KNOWN_HOSTS="-o UserKnownHostsFile=$XDG_CONFIG_HOME/ssh/known_hosts"

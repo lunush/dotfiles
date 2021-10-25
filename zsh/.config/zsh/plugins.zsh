@@ -1,9 +1,4 @@
-zinit wait lucid for \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-  zdharma/fast-syntax-highlighting \
-  blockf \
-  zsh-users/zsh-completions \
-  zsh-users/zsh-history-substring-search \
-  atload"!_zsh_autosuggest_start" \
-  zsh-users/zsh-autosuggestions \
-  hlissner/zsh-autopair
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
