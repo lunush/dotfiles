@@ -13,7 +13,7 @@ alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 alias stow="stow -v"
-alias zellij="zellij --layout ~/.config/zellij/default_layout.yml"
+alias zellij="zellij --layout ~/.config/zellij/default_layout.yaml"
 
 alias ls="exa --group-directories-first"
 alias la="exa -la --group-directories-first"
