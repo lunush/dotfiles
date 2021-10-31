@@ -91,7 +91,6 @@ for _, server in ipairs(servers) do
 	})
 end
 
-require("null-ls").setup({})
 lspconfig.tsserver.setup({
 	on_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
